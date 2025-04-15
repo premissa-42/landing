@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>42 – The Nebula</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 0;
+    }
+
+    .header {
+      padding: 7rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-family: 'DM Mono', monospace;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #ff75ff, #00d4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .bubble-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .bubble {
+      background-color: #111;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      border: 1px solid #333;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .bubble:hover {
+      background: linear-gradient(to right, #ff00ff33, #00d4ff33);
+      transform: scale(1.05);
+    }
+
+    .poetry-wall {
+      margin-top: 2rem;
+      font-style: italic;
+      opacity: 0.8;
+      text-align: center;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .cta a {
+      padding: 0.8rem 2rem;
+      background: linear-gradient(to right, #00d4ff, #ff00ff);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta a:hover {
+      opacity: 0.9;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 0.85rem;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 4px;
+    }
+
+    .back-link:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="/landing/map.html" class="back-link">Map</a>
+
+  <div class="header">
+    <h1>Where we choose our name and are held.</h1>
+    <p class="glow">Soft spaces for becoming — held in breath, cloud, and care.</p>
+  </div>
+
+  <div class="section">
+    <h2>Voices in Focus</h2>
+    <div class="bubble-grid">
+      <div class="bubble">"I named myself at 16. It felt like home."</div>
+      <div class="bubble">"The mirror didn’t lie — it blinked back."</div>
+      <div class="bubble">"A soft hello from the inside."</div>
+      <div class="bubble">"I am not alone in the fog."</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Poetry & Reflections</h2>
+    <div class="poetry-wall">
+      <p>the stars don’t ask<br>for clarity —<br>they hum with maybe.</p>
+      <p>name me again,<br>until it echoes right.</p>
+      <p>a thousand soft<br>yeses in the dark.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a href="/participate.html">Add Your Voice</a>
+  </div>
+
+</body>
+</html>
