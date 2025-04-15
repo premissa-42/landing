@@ -2,48 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>42 — A Portal of Memory</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>42 – A Virtual Museum</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: #0a0a0a;
-      color: #f5f5f5;
-      font-family: 'Space Mono', monospace;
+      font-family: system-ui, sans-serif;
+      background: #0a0a0a;
+      color: #f0f0f0;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 1rem 2rem;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a {
+      color: #f0f0f0;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #9e8cff;
+    }
+
+    main {
+      padding: 3rem 2rem;
+      max-width: 700px;
+      margin: auto;
       text-align: center;
     }
+
     h1 {
-      font-size: 2.8rem;
-      line-height: 1.2;
-    }
-    p {
-      max-width: 500px;
-      margin: 1.5rem auto 0;
-      font-size: 1rem;
-      opacity: 0.7;
-    }
-    a {
-      color: #8a6eff;
-      text-decoration: none;
-      margin-top: 2rem;
-      display: inline-block;
-    }
-    a:hover {
-      text-decoration: underline;
+      font-size: 2rem;
+      font-weight: 400;
     }
   </style>
 </head>
 <body>
-  <div>
+  <nav>
+    <div class="logo">42</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+      <a href="observatory.html">Observatory</a>
+      <a href="nebula.html">Nebula</a>
+      <a href="studio.html">Studio</a>
+      <a href="horizon.html">Horizon</a>
+    </div>
+  </nav>
+
+  <main>
     <h1>Welcome to 42</h1>
-    <p>A virtual museum for memory, identity, and co-creation — part of Premissa.</p>
-    <a href="https://www.premissahibrida.com" target="_blank">↳ Visit Premissa</a>
-  </div>
+    <p>A portal of queer memory, island voices, and digital futures — developed by Premissa, expanded by everyone.</p>
+  </main>
 </body>
 </html>
