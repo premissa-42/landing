@@ -1,6 +1,9 @@
 /* MAIN STYLE FILE – 42 */
 
-/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,47 +13,81 @@ body {
   line-height: 1.6;
 }
 
-/* Navigation */
+/* Navigation Bar */
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  background-color: #0a0a0a;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2rem;
-  background: transparent;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
+  z-index: 1000;
+  border-bottom: 1px solid #222;
 }
 
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-  color: #ff75ff;
-  outline: none;
-}
-
-/* Logo Style */
+/* Logo */
 .logo {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   background: linear-gradient(to right, #00d4ff, #ff00ff);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Navigation Links */
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff75ff;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #111;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  padding: 0.5rem 1rem;
+  z-index: 999;
+  top: 100%;
+  left: 0;
+  border: 1px solid #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.3rem 0;
+  color: #fff;
+}
+
+.dropdown-content a:hover {
+  color: #ff75ff;
+}
+
+/* Main content spacing (accounts for fixed nav) */
+main, section {
+  padding: 6rem 2rem 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Headings */
@@ -58,33 +95,11 @@ h1, h2, h3 {
   font-family: 'DM Mono', monospace;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 0;
 }
 
-/* Accent Effects */
+/* Glowing Accent Text */
 .glow {
   color: white;
   text-shadow: 0 0 5px #00d4ff, 0 0 10px #ff00ff;
-}
-
-/* Sections */
-section {
-  padding: 6rem 2rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .nav-links a {
-    margin-left: 0;
-    padding: 0.5rem 0;
-  }
 }
