@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>42 – Constellation Map</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .map-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    .center-logo {
+      position: absolute;
+      font-size: 3rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #00d4ff, #ff00ff);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    .planet {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #444, #111);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      color: white;
+    }
+
+    .planet:hover {
+      transform: scale(1.2);
+      background: #222;
+      z-index: 2;
+    }
+
+    .planet .tooltip {
+      display: none;
+      position: absolute;
+      bottom: -60px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 0.7rem;
+      border-radius: 6px;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      z-index: 10;
+    }
+
+    .planet:hover .tooltip {
+      display: block;
+    }
+
+    /* Positions around center */
+    #planet1 { top: 20%; left: 50%; transform: translateX(-50%) rotate(0deg); animation: orbit1 20s linear infinite; }
+    #planet2 { top: 50%; left: 85%; transform: translate(-50%, -50%); animation: orbit2 25s linear infinite; }
+    #planet3 { top: 80%; left: 50%; transform: translateX(-50%); animation: orbit3 30s linear infinite; }
+    #planet4 { top: 50%; left: 10%; transform: translate(-50%, -50%); animation: orbit4 35s linear infinite; }
+
+    @keyframes orbit1 {
+      0%   { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+    }
+    @keyframes orbit2 {
+      0%   { transform: rotate(0deg) translateY(160px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateY(160px) rotate(-360deg); }
+    }
+    @keyframes orbit3 {
+      0%   { transform: rotate(0deg) translateX(-120px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(-120px) rotate(-360deg); }
+    }
+    @keyframes orbit4 {
+      0%   { transform: rotate(0deg) translateY(-160px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateY(-160px) rotate(-360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+    }
+
+    a {
+      color: #9e8cff;
+      text-decoration: none;
+    }
+
+    .tooltip a {
+      display: block;
+      padding: 0.2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="map-container">
+    <div class="center-logo">42</div>
+
+    <div id="planet1" class="planet">
+      Observatory
+      <div class="tooltip">
+        <a href="map/observatory.html">Enter Observatory</a>
+        <a href="map/archive-of-us.html">→ Archive of Us</a>
+        <a href="map/research.html">→ Research</a>
+      </div>
+    </div>
+
+    <div id="planet2" class="planet">
+      Nebula
+      <div class="tooltip">
+        <a href="map/nebula.html">Enter Nebula</a>
+        <a href="map/voices.html">→ Voices in Focus</a>
+        <a href="map/poetry.html">→ Poetry & Reflections</a>
+      </div>
+    </div>
+
+    <div id="planet3" class="planet">
+      Studio
+      <div class="tooltip">
+        <a href="map/studio.html">Enter Studio</a>
+        <a href="map/tilt.html">→ Tilt & Trace</a>
+        <a href="map/movement.html">→ In the Dark</a>
+      </div>
+    </div>
+
+    <div id="planet4" class="planet">
+      Horizon
+      <div class="tooltip">
+        <a href="map/horizon.html">Enter Horizon</a>
+        <a href="map/island.html">→ Island Horizon</a>
+        <a href="map/events.html">→ Satellite Events</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
