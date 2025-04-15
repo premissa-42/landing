@@ -1,5 +1,6 @@
 /* MAIN STYLE FILE – 42 */
 
+/* Base Styles */
 body {
   margin: 0;
   padding: 0;
@@ -13,6 +14,7 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1.2rem 2rem;
   background: transparent;
   position: fixed;
@@ -21,24 +23,34 @@ nav {
   z-index: 10;
 }
 
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .nav-links a {
   color: #ffffff;
   text-decoration: none;
-  margin-left: 2rem;
   font-weight: 500;
+  transition: color 0.2s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus {
   color: #ff75ff;
+  outline: none;
 }
 
-/* Logo style */
+/* Logo Style */
 .logo {
   font-size: 2rem;
   font-weight: bold;
   background: linear-gradient(to right, #00d4ff, #ff00ff);
   -webkit-background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 /* Headings */
@@ -48,12 +60,31 @@ h1, h2, h3 {
   letter-spacing: 1px;
 }
 
-/* Accent effects */
+/* Accent Effects */
 .glow {
   color: white;
   text-shadow: 0 0 5px #00d4ff, 0 0 10px #ff00ff;
 }
 
+/* Sections */
 section {
   padding: 6rem 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    padding: 0.5rem 0;
+  }
 }
