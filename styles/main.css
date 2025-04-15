@@ -144,14 +144,54 @@ h1, h2, h3 {
   color: #aaa;
 }
 
-.orbit-wrapper {
+.orbit {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: center center;
+  transform-origin: center;
 }
 
-.planet-orbit {
-  animation: orbit 20s linear infinite;
-  transform: translateX(150px); /* distance from center */
+/* Each with its own distance, speed and direction */
+.orbit1 {
+  animation: orbit1 28s linear infinite;
+  transform: rotate(0deg);
+}
+
+.orbit2 {
+  animation: orbit2 35s linear infinite reverse;
+  transform: rotate(90deg);
+}
+
+.orbit3 {
+  animation: orbit3 42s linear infinite;
+  transform: rotate(180deg);
+}
+
+.orbit4 {
+  animation: orbit4 55s linear infinite reverse;
+  transform: rotate(270deg);
+}
+
+/* Orbit motion: they rotate around center while shifting on X axis */
+.planet1 { transform: translateX(120px); }
+.planet2 { transform: translateX(180px); }
+.planet3 { transform: translateX(240px); }
+.planet4 { transform: translateX(300px); }
+
+/* Orbit animations */
+@keyframes orbit1 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes orbit2 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes orbit3 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes orbit4 {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
