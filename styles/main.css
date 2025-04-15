@@ -176,3 +176,6 @@ h1, h2, h3 {
   0%, 100% { stroke-opacity: 0.05; }
   50% { stroke-opacity: 0.15; }
 }
+.map-container {
+  overflow: visible; /* allow SVG rings to show */
+}
