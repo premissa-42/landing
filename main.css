@@ -1,0 +1,59 @@
+/* MAIN STYLE FILE – 42 */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #ff75ff;
+}
+
+/* Logo style */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #00d4ff, #ff00ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Accent effects */
+.glow {
+  color: white;
+  text-shadow: 0 0 5px #00d4ff, 0 0 10px #ff00ff;
+}
+
+section {
+  padding: 6rem 2rem;
+}
