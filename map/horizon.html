@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>42 – The Horizon</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 0;
+    }
+
+    .header {
+      padding: 7rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-family: 'DM Mono', monospace;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #ffd900, #ff75ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: #111;
+      padding: 1.2rem;
+      border-radius: 6px;
+      border-left: 3px solid #ffd900;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .cta {
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .cta a {
+      padding: 0.8rem 2rem;
+      background: linear-gradient(to right, #00d4ff, #ff00ff);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta a:hover {
+      opacity: 0.9;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 0.85rem;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 4px;
+    }
+
+    .back-link:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="/landing/map.html" class="back-link">Map</a>
+
+  <div class="header">
+    <h1>Look beyond. We’re already here.</h1>
+    <p class="glow">This is where queer memory meets the world — exhibitions, panels, satellite events.</p>
+  </div>
+
+  <div class="section">
+    <h2>Island Horizon</h2>
+    <div class="grid">
+      <div class="card">Azorean Showcase<br><small>Ongoing exhibition</small></div>
+      <div class="card">Featured Artists<br><small>Rotating digital spotlights</small></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>International Collabs</h2>
+    <p>From Berlin to São Paulo, our cosmos is stitched with shared futures and artistic kinship.</p>
+    <div class="grid">
+      <div class="card">Digital Art Exchanges</div>
+      <div class="card">Festival Portals</div>
+      <div class="card">Curated Commissions</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Satellite Events</h2>
+    <p>42 is present in galleries, Zoom panels, rooftops, and beyond.</p>
+    <div class="grid">
+      <div class="card">VR Pop-ups<br><small>Portugal, Brazil, Germany</small></div>
+      <div class="card">Upcoming: Festival XX</div>
+      <div class="card">Archive: See past events</div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a href="/participate.html">Propose a Collaboration</a>
+  </div>
+
+</body>
+</html>
