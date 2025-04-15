@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic Network Visualizer</title>
+  <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+
+    #cy {
+      margin-top: 20px;
+      width: 100%;
+      height: 600px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Semantic Network Visualizer</h1>
+  <p>Paste your text below to generate a basic semantic network graph.</p>
+
+  <textarea id="inputText" rows="6" placeholder="Enter text here..."></textarea><br>
+  <button onclick="processText()">Generate Network</button>
+
+  <div id="cy"></div>
+
+  <script>
+    function processText() {
+      const text = document.getElementById("inputText").value;
+      const cleaned = text.toLowerCase().replace(/[^\w\s]/g, '');
+      const words = cleaned.split(/\s+/).filter(w => w.length > 3);
+
+      const uniqueWords = [...new Set(words)];
+      if (uniqueWords.length === 0) return;
+
+      const nodes = uniqueWords.map((word, i) => ({
+        data: { id: `n${i}`, label: word }
+      }));
+
+      const edges = [];
+      for (let i = 0; i < uniqueWords.length - 1; i++) {
+        edges.push({
+          data: {
+            source: `n${i}`,
+            target: `n${i + 1}`
+          }
+        });
+      }
+
+      const cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements: {
+          nodes: nodes,
+          edges: edges
+        },
+        style: [
+          {
+            selector: 'node',
+            style: {
+              'label': 'data(label)',
+              'background-color': '#0074D9',
+              'color': '#fff',
+              'text-valign': 'center',
+              'text-halign': 'center',
+              'font-size': '14px',
+              'width': 40,
+              'height': 40
+            }
+          },
+          {
+            selector: 'edge',
+            style: {
+              'width': 2,
+              'line-color': '#888',
+              'target-arrow-color': '#888',
+              'target-arrow-shape': 'triangle'
+            }
+          }
+        ],
+        layout: {
+          name: 'cose',
+          animate: true
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
