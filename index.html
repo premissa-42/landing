@@ -40,20 +40,78 @@
       color: #9e8cff;
     }
 
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #111;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      padding: 0.5rem;
+      border: 1px solid #333;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: #f0f0f0;
+      display: block;
+      padding: 0.25rem 0;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      color: #9e8cff;
+    }
+
     main {
-      padding: 3rem 2rem;
-      max-width: 700px;
+      padding: 6rem 2rem;
+      max-width: 800px;
       margin: auto;
       text-align: center;
     }
 
-    h1 {
-      font-size: 2rem;
-      font-weight: 400;
+    h1.gradient-logo {
+      font-size: 6rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #00d4ff, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    .enter-button {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: #ff00ff;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .enter-button:hover {
+      background: #8a2be2;
     }
   </style>
 </head>
 <body>
+
 <nav>
   <div class="logo">42</div>
   <div class="nav-links">
@@ -71,42 +129,11 @@
   </div>
 </nav>
 
-<style>
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
+<main>
+  <h1 class="gradient-logo">42</h1>
+  <p>A portal of queer memory, island voices, and digital futures — developed by Premissa, expanded by everyone.</p>
+  <a href="map.html" class="enter-button">Enter Now</a>
+</main>
 
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #111;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    padding: 0.5rem;
-    border: 1px solid #333;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .dropdown-content a {
-    color: #f0f0f0;
-    display: block;
-    padding: 0.25rem 0;
-    text-decoration: none;
-  }
-
-  .dropdown-content a:hover {
-    color: #9e8cff;
-  }
-</style>
-
-
-  <main>
-    <h1>Welcome to 42</h1>
-    <p>A portal of queer memory, island voices, and digital futures — developed by Premissa, expanded by everyone.</p>
-  </main>
 </body>
 </html>
