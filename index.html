@@ -77,15 +77,36 @@
       text-align: center;
     }
 
-    h1.gradient-logo {
+    .shiny-42 {
       font-size: 6rem;
-      font-weight: 700;
-      background: linear-gradient(to right, #00d4ff, #ff00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-weight: 900;
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(145deg, #ff00ff, #00d4ff, #ffffff);
       background-clip: text;
-      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      text-shadow:
+        0 0 10px rgba(255, 0, 255, 0.4),
+        0 0 20px rgba(0, 212, 255, 0.3),
+        0 0 30px rgba(255, 255, 255, 0.2);
+      animation: pulse-glow 4s ease-in-out infinite;
       margin-bottom: 1.5rem;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        text-shadow:
+          0 0 10px rgba(255, 0, 255, 0.4),
+          0 0 20px rgba(0, 212, 255, 0.3),
+          0 0 30px rgba(255, 255, 255, 0.2);
+      }
+      50% {
+        text-shadow:
+          0 0 20px rgba(255, 0, 255, 0.7),
+          0 0 30px rgba(0, 212, 255, 0.5),
+          0 0 40px rgba(255, 255, 255, 0.3);
+      }
     }
 
     p {
@@ -107,6 +128,17 @@
 
     .enter-button:hover {
       background: #8a2be2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      opacity: 0.6;
+    }
+
+    footer img {
+      height: 40px;
+      margin: 0 1rem;
     }
   </style>
 </head>
@@ -130,13 +162,14 @@
 </nav>
 
 <main>
-<h1 class="shiny-42">42</h1>
+  <h1 class="shiny-42">42</h1>
   <p>Queer memory, island voices, and digital futures — developed by Premissa, expanded by everyone.</p>
   <a href="map.html" class="enter-button">Enter Now</a>
 </main>
-<footer style="text-align: center; padding: 3rem 1rem 2rem; opacity: 0.6;">
+
+<footer>
   <p style="margin-bottom: 1rem;">A project by</p>
-  <img src="assets/Premissa_Logo_transperent.png" alt="Premissa Logo" style="height: 40px; margin: 0 1rem;" />
+  <img src="assets/Premissa_Logo_transperent.png" alt="Premissa Logo" />
   <p style="margin: 2rem 0 1rem;">Funded by</p>
   <img src="assets/Jovensmais.jpg" alt="Jovens+" style="height: 50px; max-width: 200px;" />
 </footer>
