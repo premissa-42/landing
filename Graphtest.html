@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🧠 Semantic Graph – English Nouns Only</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script>
+  <script src="https://unpkg.com/compromise"></script>
+</head>
+<body>
+
+  <main>
+    <h2 class="glow">🧠 English-Only Semantic Graph (Cleaned Nouns)</h2>
+    <textarea id="inputText" class="event-card" placeholder="Enter English text here..."></textarea><br>
+    <button id="analyzeButton" class="home-button">Extract & Save</button>
+
+    <div id="cy" style="width: 100%; height: 500px; border: 1px solid #333; margin-top: 20px;"></div>
+    <div id="log" class="event-card" style="white-space: pre-wrap; font-family: monospace;"></div>
+  </main>
+
+  <script type="module">
+    const sb = supabase.createClient(
+      'https://dddbnotewlnkvuwuwywq.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRkZGJub3Rld2xua3Z1d3V3eXdxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3OTU4MDYsImV4cCI6MjA2MDM3MTgwNn0.MHHLIy-6EOLjqQKvlpEwYyW19LjLXVzgWInPrs4-w8s'
+    );
+
+    function log(msg) {
+      console.log(msg);
+      document.getElementById("log").textContent += msg + "\n";
+    }
+
+    function extractAssociations(text) {
+      const cleaned = text
+        .replace(/[.,;!?()\[\]{}"'\-–—=<>@#$%^&*0-9_+|\\/`~]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      const doc = window.nlp(cleaned);
+      const nouns = doc.nouns().out('array').map(w => w.toLowerCase())
+        .filter(w => w.length > 3 && !stopwords.includes(w));
+
+      const frequency = {};
+      const coOccurrences = {};
+
+      for (let i = 0; i < nouns.length; i++) {
+        const word = nouns[i];
+        frequency[word] = (frequency[word] || 0) + 1;
+
+        for (let j = i + 1; j < Math.min(i + 5, nouns.length); j++) {
+          const pair = [word, nouns[j]].sort().join('--');
+          coOccurrences[pair] = (coOccurrences[pair] || 0) + 1;
+        }
+      }
+
+      const nodes = [...new Set(nouns)];
+      const edges = Object.entries(coOccurrences).map(([key, weight]) => {
+        const [source, target] = key.split('--');
+        return { source, target, relation: 'co-occur', weight };
+      });
+
+      return { nodes, edges };
+    }
+
+    async function upsertNode(label) {
+      const { data, error } = await sb
+        .from('nodes')
+        .upsert({ label, language: 'en' }, { onConflict: ['label', 'language'] })
+        .select()
+        .maybeSingle();
+      if (error) log("❌ Node error: " + error.message);
+      else log("✅ Node saved: " + label);
+      return data || null;
+    }
+
+    async function upsertEdge(source_id, target_id, relation) {
+      const { data: existing, error: edgeSelErr } = await sb
+        .from('edges')
+        .select('*')
+        .eq('source_id', source_id)
+        .eq('target_id', target_id)
+        .eq('relation', relation);
+
+      if (existing && existing.length > 0) {
+        const { error: updErr } = await sb
+          .from('edges')
+          .update({ weight: existing[0].weight + 1 })
+          .eq('id', existing[0].id);
+        if (updErr) log('❌ Edge update error: ' + updErr.message);
+        else log("🔁 Edge reinforced");
+      } else {
+        const { error: insErr } = await sb
+          .from('edges')
+          .insert({ source_id, target_id, relation, weight: 1 });
+        if (insErr) log("❌ Edge insert error: " + insErr.message);
+        else log("✅ New edge created");
+      }
+    }
+
+    async function processText() {
+      document.getElementById("log").textContent = "";
+      const text = document.getElementById('inputText').value;
+      const result = extractAssociations(text);
+
+      const nodeMap = {};
+      for (const label of result.nodes) {
+        const node = await upsertNode(label);
+        if (node) nodeMap[label] = node.id;
+      }
+
+      for (const edge of result.edges) {
+        const source_id = nodeMap[edge.source];
+        const target_id = nodeMap[edge.target];
+        if (source_id && target_id && source_id !== target_id) {
+          await upsertEdge(source_id, target_id, edge.relation);
+        }
+      }
+
+      loadGraph();
+    }
+
+    async function loadGraph() {
+      const { data: nodes } = await sb.from('nodes').select('*').eq('language', 'en');
+      const { data: edges } = await sb.from('edges').select('*');
+
+      const cyNodes = nodes.map(n => ({ data: { id: n.id, label: n.label } }));
+      const cyEdges = edges
+        .filter(e => cyNodes.find(n => n.data.id === e.source_id) && cyNodes.find(n => n.data.id === e.target_id))
+        .map(e => ({ data: { source: e.source_id, target: e.target_id } }));
+
+      cytoscape({
+        container: document.getElementById('cy'),
+        elements: [...cyNodes, ...cyEdges],
+        style: [
+          {
+            selector: 'node',
+            style: {
+              'label': 'data(label)',
+              'background-color': '#00d4ff',
+              'color': '#fff',
+              'text-valign': 'center',
+              'text-halign': 'center',
+              'font-size': '14px'
+            }
+          },
+          {
+            selector: 'edge',
+            style: {
+              'width': 2,
+              'line-color': '#ff00ff',
+              'target-arrow-color': '#ff00ff',
+              'target-arrow-shape': 'triangle'
+            }
+          }
+        ],
+        layout: { name: 'cose' }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("analyzeButton").addEventListener("click", processText);
+      loadGraph();
+    });
+
+    const stopwords = [
+      "this", "that", "with", "from", "they", "their", "have", "been", "about",
+      "will", "would", "there", "what", "which", "shall", "could", "them", "into",
+      "some", "other", "only", "more", "also", "very", "just", "than", "then",
+      "like", "each", "every", "over", "such", "through", "those", "because",
+      "while", "where", "when", "were", "your", "you're", "has", "had", "not",
+      "our", "ours", "ourselves", "him", "hers", "his", "her", "its", "it's",
+      "the", "and", "for", "you", "are", "was", "but", "all", "out", "who", "why",
+      "how", "can", "get", "got", "may", "say", "says", "said", "on", "off", "in",
+      "an", "as", "at", "to", "a", "of", "by", "is", "it", "be", "do", "if", "or",
+      "so", "up", "no", "yes", "he", "she", "we", "i", "me", "my"
+    ];
+  </script>
+
+</body>
+</html>
