@@ -140,6 +140,38 @@
       height: 40px;
       margin: 0 1rem;
     }
+	
+    /* BUBBLES */
+    .bubble {
+      position: absolute;
+      padding: 0.6rem 1.2rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 40px;
+      color: #fff;
+      font-size: 0.9rem;
+      pointer-events: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      animation: floatRandom 8s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+
+    .bubble.explode {
+      animation: explode 0.6s forwards;
+      pointer-events: none;
+    }
+
+    @keyframes explode {
+      0% { transform: scale(1); opacity: 1; box-shadow: 0 0 10px #ff00ff; }
+      100% { transform: scale(2.2); opacity: 0; box-shadow: 0 0 80px #ff00ff; }
+    }
+
+    @keyframes floatRandom {
+      0%   { transform: translate(0, 0); }
+      50%  { transform: translate(10px, -15px); }
+      100% { transform: translate(-10px, 15px); }
+    }
   </style>
 </head>
 <body>
@@ -163,9 +195,12 @@
 
 <main>
   <h1 class="shiny-42">42</h1>
-  <p>Queer memory, island voices, and digital futures — developed by Premissa, expanded by everyone.</p>
+  <p>Not not a museeum — developed by Premissa, expanded by everyone.</p>
   <a href="map.html" class="enter-button">Enter Now</a>
 </main>
+<div class="bubble">queer memory</div>
+<div class="bubble">island voices</div>
+<div class="bubble">digital futures</div>
 
 <footer style="text-align: center; padding: 3rem 1rem 2rem; opacity: 0.6;">
   <p style="margin-bottom: 0.5rem;">A project by</p>
@@ -180,6 +215,35 @@
   </div>
 </footer>
 
+<script>
+  const bubbles = document.querySelectorAll('.bubble');
 
+  function randomPosition(el) {
+    const x = Math.random() * (window.innerWidth - 140);
+    const y = Math.random() * (window.innerHeight - 60);
+    el.style.left = `${x}px`;
+    el.style.top = `${y}px`;
+  }
+
+  function respawn(el) {
+    el.classList.remove('explode');
+    randomPosition(el);
+  }
+
+  bubbles.forEach((bubble) => {
+    randomPosition(bubble);
+
+    bubble.addEventListener('mouseenter', () => {
+      bubble.classList.add('explode');
+      setTimeout(() => {
+        respawn(bubble);
+      }, 1000);
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    bubbles.forEach(randomPosition);
+  });
+</script>
 </body>
 </html>
