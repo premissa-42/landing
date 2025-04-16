@@ -142,7 +142,16 @@
     }
 	
     /* BUBBLES */
-    .bubble {
+      .bubble-zone {
+    position: absolute;
+    top: 6rem;
+    bottom: 8rem;
+    left: 1rem;
+    right: 1rem;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .bubble {
       position: absolute;
       padding: 0.6rem 1.2rem;
       background: rgba(255, 255, 255, 0.08);
@@ -195,12 +204,14 @@
 
 <main>
   <h1 class="shiny-42">42</h1>
-  <p>Not not a museeum.</p>
+  <p>Queer memory, island voices, and digital futures — developed by Premissa, expanded by everyone.</p>
   <a href="map.html" class="enter-button">Enter Now</a>
 </main>
-<div class="bubble">queer memory</div>
-<div class="bubble">island voices</div>
-<div class="bubble">digital futures</div>
+<div class="bubble-zone">
+  <div class="bubble">queer memory</div>
+  <div class="bubble">island voices</div>
+  <div class="bubble">digital futures</div>
+</div>
 
 <footer style="text-align: center; padding: 3rem 1rem 2rem; opacity: 0.6;">
   <p style="margin-bottom: 0.5rem;">A project by</p>
@@ -217,10 +228,14 @@
 
 <script>
   const bubbles = document.querySelectorAll('.bubble');
+   const zone = document.querySelector('.bubble-zone');
 
-  function randomPosition(el) {
-    const x = Math.random() * (window.innerWidth - 140);
-    const y = Math.random() * (window.innerHeight - 60);
+   function randomPosition(el) {
+    const zoneRect = zone.getBoundingClientRect();
+    const maxX = zoneRect.width - 140;
+    const maxY = zoneRect.height - 60;
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
     el.style.left = `${x}px`;
     el.style.top = `${y}px`;
   }
