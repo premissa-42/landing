@@ -153,19 +153,46 @@
 }
 
   .bubble {
-      position: absolute;
-      padding: 0.6rem 1.2rem;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 40px;
-      color: #fff;
-      font-size: 0.9rem;
-      pointer-events: auto;
-      cursor: pointer;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      animation: floatRandom 8s ease-in-out infinite alternate;
-      z-index: 100;
-    }
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 40% / 50%;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: floatRandom 8s ease-in-out infinite alternate;
+  z-index: 100;
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.05),
+    inset 0 0 10px rgba(255, 255, 255, 0.04);
+}
+
+.bubble::before,
+.bubble::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.bubble::before {
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: 10px;
+}
+
+.bubble::after {
+  width: 25px;
+  height: 25px;
+  top: -12px;
+  right: 15px;
+}
+
 
     .bubble.explode {
       animation: explode 0.6s forwards;
