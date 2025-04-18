@@ -182,6 +182,18 @@
       50%  { transform: translate(10px, -15px); }
       100% { transform: translate(-10px, 15px); }
     }
+.trail-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  opacity: 0.8;
+  filter: blur(1px);
+  transition: left 0.15s ease, top 0.15s ease, background 0.3s;
+}
   </style>
 </head>
 <body>
@@ -273,17 +285,74 @@
     randomPosition(el);
   }
 
+  // Easter Egg: Rainbow trail after 15 pops
+  let explodeCount = 0;
+  let rainbowActive = false;
+
+  function triggerRainbowCursor() {
+    if (rainbowActive) return;
+    rainbowActive = true;
+
+    const trail = [];
+    const colors = ['#ff0080', '#ffbf00', '#00ffbf', '#00bfff', '#bf00ff', '#ff0080'];
+    let colorIndex = 0;
+
+    for (let i = 0; i < 12; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'trail-dot';
+      dot.style.background = colors[i % colors.length];
+      document.body.appendChild(dot);
+      trail.push(dot);
+    }
+
+    let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+    window.addEventListener('mousemove', e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    function animateTrail() {
+      let x = mouse.x;
+      let y = mouse.y;
+
+      trail.forEach((dot, i) => {
+        setTimeout(() => {
+          dot.style.left = `${x}px`;
+          dot.style.top = `${y}px`;
+          dot.style.background = colors[(colorIndex + i) % colors.length];
+        }, i * 20);
+
+        x += Math.sin(i) * 4;
+        y += Math.cos(i) * 4;
+      });
+
+      colorIndex = (colorIndex + 1) % colors.length;
+      requestAnimationFrame(animateTrail);
+    }
+
+    animateTrail();
+  }
+
+  // Bubble explosion logic
   bubbles.forEach((bubble) => {
     randomPosition(bubble);
 
     bubble.addEventListener('mouseenter', () => {
       bubble.classList.add('explode');
+      explodeCount++;
+
+      if (explodeCount === 15) {
+        triggerRainbowCursor();
+      }
+
       setTimeout(() => {
         respawn(bubble);
       }, 1000);
     });
   });
 
+  // Recalculate protected area on resize
   window.addEventListener('resize', () => {
     const mainRect = main.getBoundingClientRect();
     protectedArea.x = mainRect.left;
@@ -294,6 +363,7 @@
     bubbles.forEach(randomPosition);
   });
 </script>
+
 
 </body>
 </html>
