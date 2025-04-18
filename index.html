@@ -152,20 +152,24 @@
   z-index: 99;
 }
 
-  .bubble {
-      position: absolute;
-      padding: 0.6rem 1.2rem;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 40px;
-      color: #fff;
-      font-size: 0.9rem;
-      pointer-events: auto;
-      cursor: pointer;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      animation: floatRandom 8s ease-in-out infinite alternate;
-      z-index: 100;
-    }
+ .bubble {
+  position: absolute;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: none; /* 🔥 no border line */
+  border-radius: 40px;
+  color: #fff;
+  font-size: 0.9rem;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: floatRandom 8s ease-in-out infinite alternate;
+  z-index: 100;
+
+  /* 👇 optional glass effect */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
 
     .bubble.explode {
       animation: explode 0.6s forwards;
