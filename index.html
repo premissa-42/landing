@@ -239,7 +239,6 @@
     <a href="contact.html" style="margin: 0 1rem; color: #ccc; text-decoration: none;">Contact</a>
   </div>
 </footer>
-
 <script>
   const bubbles = document.querySelectorAll('.bubble');
   const zone = document.querySelector('.bubble-zone');
@@ -280,14 +279,9 @@
     el.style.top = `${y}px`;
   }
 
-  function respawn(el) {
-    el.classList.remove('explode');
-    randomPosition(el);
-  }
-
-  // Easter Egg: Rainbow trail after 15 pops
   let explodeCount = 0;
   let rainbowActive = false;
+  let stopRespawning = false;
 
   function triggerRainbowCursor() {
     if (rainbowActive) return;
@@ -334,7 +328,15 @@
     animateTrail();
   }
 
-  // Bubble explosion logic
+  function respawn(el) {
+    el.classList.remove('explode');
+    if (!stopRespawning) {
+      randomPosition(el);
+    } else {
+      el.remove(); // completely remove the bubble if we stop
+    }
+  }
+
   bubbles.forEach((bubble) => {
     randomPosition(bubble);
 
@@ -344,6 +346,7 @@
 
       if (explodeCount === 15) {
         triggerRainbowCursor();
+        stopRespawning = true;
       }
 
       setTimeout(() => {
@@ -352,7 +355,6 @@
     });
   });
 
-  // Recalculate protected area on resize
   window.addEventListener('resize', () => {
     const mainRect = main.getBoundingClientRect();
     protectedArea.x = mainRect.left;
@@ -360,9 +362,12 @@
     protectedArea.width = mainRect.width;
     protectedArea.height = mainRect.height;
 
-    bubbles.forEach(randomPosition);
+    if (!stopRespawning) {
+      bubbles.forEach(randomPosition);
+    }
   });
 </script>
+
 
 
 </body>
