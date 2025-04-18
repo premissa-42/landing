@@ -232,15 +232,42 @@
   const bubbles = document.querySelectorAll('.bubble');
    const zone = document.querySelector('.bubble-zone');
 
-   function randomPosition(el) {
-    const zoneRect = zone.getBoundingClientRect();
-    const maxX = zoneRect.width - 140;
-    const maxY = zoneRect.height - 60;
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
-    el.style.left = `${x}px`;
-    el.style.top = `${y}px`;
-  }
+  function isOverlappingProtectedArea(x, y, width, height) {
+  const protectedArea = {
+    x: window.innerWidth / 2 - 200,
+    y: 250, // adjust this depending on your layout
+    width: 400,
+    height: 200
+  };
+
+  return !(
+    x + width < protectedArea.x ||
+    x > protectedArea.x + protectedArea.width ||
+    y + height < protectedArea.y ||
+    y > protectedArea.y + protectedArea.height
+  );
+}
+
+function randomPosition(el) {
+  const zoneRect = zone.getBoundingClientRect();
+  const maxX = zoneRect.width - 140;
+  const maxY = zoneRect.height - 60;
+
+  let x, y;
+  let tries = 0;
+
+  do {
+    x = Math.random() * maxX;
+    y = Math.random() * maxY;
+    tries++;
+    // limit to prevent infinite loops
+    if (tries > 50) break;
+  } while (isOverlappingProtectedArea(x, y, 140, 60));
+
+  el.style.left = `${x}px`;
+  el.style.top = `${y}px`;
+}
+
 
   function respawn(el) {
     el.classList.remove('explode');
