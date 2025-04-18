@@ -142,15 +142,16 @@
     }
 	
     /* BUBBLES */
-      .bubble-zone {
-    position: absolute;
-    top: 6rem;
-    bottom: 8rem;
-    left: 1rem;
-    right: 1rem;
-    pointer-events: none;
-    z-index: 0;
-  }
+.bubble-zone {
+  position: fixed;
+  top: 6rem;
+  left: 0;
+  right: 0;
+  bottom: 8rem;
+  pointer-events: none;
+  z-index: 99;
+}
+
   .bubble {
       position: absolute;
       padding: 0.6rem 1.2rem;
@@ -163,7 +164,7 @@
       cursor: pointer;
       transition: transform 0.3s ease, opacity 0.3s ease;
       animation: floatRandom 8s ease-in-out infinite alternate;
-      z-index: 1;
+      z-index: 100;
     }
 
     .bubble.explode {
