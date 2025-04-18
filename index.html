@@ -230,44 +230,43 @@
 
 <script>
   const bubbles = document.querySelectorAll('.bubble');
-   const zone = document.querySelector('.bubble-zone');
+  const zone = document.querySelector('.bubble-zone');
 
-  function isOverlappingProtectedArea(x, y, width, height) {
+  const main = document.querySelector('main');
+  const mainRect = main.getBoundingClientRect();
+
   const protectedArea = {
-    x: window.innerWidth / 2 - 200,
-    y: 250, // adjust this depending on your layout
-    width: 400,
-    height: 200
+    x: mainRect.left,
+    y: mainRect.top,
+    width: mainRect.width,
+    height: mainRect.height
   };
 
-  return !(
-    x + width < protectedArea.x ||
-    x > protectedArea.x + protectedArea.width ||
-    y + height < protectedArea.y ||
-    y > protectedArea.y + protectedArea.height
-  );
-}
+  function isOverlappingProtectedArea(x, y, width, height) {
+    return !(
+      x + width < protectedArea.x ||
+      x > protectedArea.x + protectedArea.width ||
+      y + height < protectedArea.y ||
+      y > protectedArea.y + protectedArea.height
+    );
+  }
 
-function randomPosition(el) {
-  const zoneRect = zone.getBoundingClientRect();
-  const maxX = zoneRect.width - 140;
-  const maxY = zoneRect.height - 60;
+  function randomPosition(el) {
+    const zoneRect = zone.getBoundingClientRect();
+    const maxX = zoneRect.width - 140;
+    const maxY = zoneRect.height - 60;
 
-  let x, y;
-  let tries = 0;
+    let x, y, tries = 0;
+    do {
+      x = Math.random() * maxX;
+      y = Math.random() * maxY;
+      tries++;
+      if (tries > 50) break;
+    } while (isOverlappingProtectedArea(x + zoneRect.left, y + zoneRect.top, 140, 60));
 
-  do {
-    x = Math.random() * maxX;
-    y = Math.random() * maxY;
-    tries++;
-    // limit to prevent infinite loops
-    if (tries > 50) break;
-  } while (isOverlappingProtectedArea(x, y, 140, 60));
-
-  el.style.left = `${x}px`;
-  el.style.top = `${y}px`;
-}
-
+    el.style.left = `${x}px`;
+    el.style.top = `${y}px`;
+  }
 
   function respawn(el) {
     el.classList.remove('explode');
@@ -286,8 +285,15 @@ function randomPosition(el) {
   });
 
   window.addEventListener('resize', () => {
+    const mainRect = main.getBoundingClientRect();
+    protectedArea.x = mainRect.left;
+    protectedArea.y = mainRect.top;
+    protectedArea.width = mainRect.width;
+    protectedArea.height = mainRect.height;
+
     bubbles.forEach(randomPosition);
   });
 </script>
+
 </body>
 </html>
