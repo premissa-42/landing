@@ -5,48 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Volunteer at Premissa | 42</title>
   <link rel="stylesheet" href="/styles/main.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&family=DM+Mono&display=swap" rel="stylesheet" />
   <style>
     body {
-      background: #0a0a0a;
-      color: #fff;
+      background-color: #0a0a0a;
+      color: #ffffff;
       font-family: 'Space Grotesk', sans-serif;
-      padding: 4rem 2rem;
+      margin: 0;
+      padding: 0;
     }
 
-    .hero {
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 0.85rem;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 4px;
+    }
+
+    .back-link:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    .header {
+      padding: 7rem 2rem 3rem;
       text-align: center;
-      margin-bottom: 3rem;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      background: linear-gradient(90deg, #57ccff, #cc66ff);
+    .header h1 {
+      font-family: 'DM Mono', monospace;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(to right, #00d4ff, #ff00ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 15px rgba(204, 102, 255, 0.2);
-      letter-spacing: 2px;
+      margin-bottom: 1rem;
     }
 
     .subtext {
-      color: #a0a0a0;
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+      color: #ccc;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .section {
       max-width: 800px;
-      margin: 0 auto;
-      background: #111;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      margin: 4rem auto;
+      padding: 0 2rem;
     }
 
     .section p {
-      margin-bottom: 1.5rem;
       font-size: 1.05rem;
       line-height: 1.7;
+      margin-bottom: 1.5rem;
       color: #ddd;
     }
 
@@ -55,83 +73,41 @@
     }
 
     a {
-      color: #cc99ff;
+      color: #ff99ff;
       text-decoration: underline;
     }
 
     footer {
       text-align: center;
-      margin-top: 4rem;
+      margin: 4rem 0 2rem;
       font-size: 0.8rem;
       color: #888;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #0a0a0a;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      z-index: 10;
-    }
-
-    nav .logo {
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: #fff;
-    }
-
-    nav .nav-links a {
-      margin-left: 1rem;
-      color: #ccc;
-      text-decoration: none;
-    }
-
-    nav .nav-links a:hover {
-      color: #fff;
-    }
-
-    main {
-      padding-top: 6rem;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">42</div>
-    <div class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="/map.html">Map</a>
-      <a href="/events.html">Events</a>
-      <a href="/Opportunities.html">Opportunities</a>
-      <a href="/about.html">About</a>
-    </div>
-  </nav>
 
-  <main>
-    <section class="hero">
-      <h1>VOLUNTEER AT PREMISSA</h1>
-      <p class="subtext">Support community, creativity & care — and receive recognition.</p>
-    </section>
+<a href="/landing/Opportunities.html" class="back-link">Back</a>
 
-    <section class="section">
-      <p><strong>Premissa</strong> is a non-profit community center in Ponta Delgada dedicated to creativity, inclusion, and collective well-being — through art, activity, and connection.</p>
+<div class="header">
+  <h1>Volunteer at Premissa</h1>
+  <p class="subtext">Support community, creativity & care — and receive recognition.</p>
+</div>
 
-      <p>We’re always grateful for volunteers who offer their time — helping at events, supporting workshops, sharing knowledge, or simply showing up in presence and care.</p>
+<div class="section">
+  <p><strong>Premissa</strong> is a non-profit community center in Ponta Delgada dedicated to creativity, inclusion, and collective well-being — through art, activity, and connection.</p>
 
-      <p>Volunteers enjoy <strong>free access</strong> to all our programs and activities, and we’re happy to provide <strong>Bescheinigungen oder Zeugnisse</strong> (certificates or letters of reference) for your contribution to the community.</p>
+  <p>We’re always grateful for volunteers who offer their time — helping at events, supporting workshops, sharing knowledge, or simply showing up in presence and care.</p>
 
-      <p>Interested? Just reach out:<br>
-        <a href="mailto:premissahibrida@gmail.com">premissahibrida@gmail.com</a>
-      </p>
-    </section>
-  </main>
+  <p>Volunteers enjoy <strong>free access</strong> to all our programs and activities, and we’re happy to provide <strong>Bescheinigungen oder Zeugnisse</strong> (certificates or letters of reference) for your contribution to the community.</p>
 
-  <footer>
-    Part of the 42 by PAA – Premissa Açores Associação
-  </footer>
+  <p>Interested? Just write to:<br>
+    <a href="mailto:premissahibrida@gmail.com">premissahibrida@gmail.com</a></p>
+</div>
+
+<footer>
+  Part of the 42 by PAA – Premissa Açores Associação
+</footer>
+
 </body>
 </html>
