@@ -3,46 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Volunteer at Premissa – 42</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <title>Volunteer at Premissa | 42</title>
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      padding: 4rem 2rem;
+    }
+
     .hero {
       text-align: center;
-      margin-top: 4rem;
+      margin-bottom: 3rem;
     }
 
     .hero h1 {
       font-size: 3rem;
-      background: linear-gradient(90deg, #ff99cc, #cc99ff);
+      background: linear-gradient(90deg, #57ccff, #cc66ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      text-shadow: 0 0 15px rgba(204, 102, 255, 0.2);
+      letter-spacing: 2px;
     }
 
-    .opportunity-card {
-      max-width: 700px;
-      margin: 2rem auto;
+    .subtext {
+      color: #a0a0a0;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
       background: #111;
-      color: #eee;
-      border-radius: 1rem;
       padding: 2rem;
-      line-height: 1.6;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
     }
 
-    .opportunity-card p {
+    .section p {
       margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #ddd;
     }
 
-    .opportunity-card a {
-      color: #ffccff;
+    .section strong {
+      color: #fff;
+    }
+
+    a {
+      color: #cc99ff;
       text-decoration: underline;
     }
 
     footer {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 4rem;
       font-size: 0.8rem;
-      color: #aaa;
+      color: #888;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #0a0a0a;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    nav .nav-links a {
+      margin-left: 1rem;
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    nav .nav-links a:hover {
+      color: #fff;
+    }
+
+    main {
+      padding-top: 6rem;
     }
   </style>
 </head>
@@ -50,24 +103,30 @@
   <nav>
     <div class="logo">42</div>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="map.html">Map</a>
-      <a href="events.html">Events</a>
-      <a href="about.html">About</a>
+      <a href="/index.html">Home</a>
+      <a href="/map.html">Map</a>
+      <a href="/events.html">Events</a>
+      <a href="/Opportunities.html">Opportunities</a>
+      <a href="/about.html">About</a>
     </div>
   </nav>
 
   <main>
     <section class="hero">
-      <h1>Volunteer at Premissa</h1>
+      <h1>VOLUNTEER AT PREMISSA</h1>
+      <p class="subtext">Support community, creativity & care — and receive recognition.</p>
     </section>
 
-    <section class="opportunity-card">
-      <p><strong>Premissa</strong> is a non-profit community space in Ponta Delgada dedicated to creativity, inclusion, and well-being through art, activity, and exchange.</p>
-      <p>We’re always grateful for volunteers who offer their time — whether by helping during events, assisting workshops, or just being supportive in our shared space.</p>
-      <p>You’ll receive <strong>free access</strong> to our programs and, if requested, certificates or letters of reference confirming your voluntary contribution.</p>
-      <p>Interested in helping out or getting involved?<br>
-        Get in touch: <a href="mailto:premissahibrida@gmail.com">premissahibrida@gmail.com</a></p>
+    <section class="section">
+      <p><strong>Premissa</strong> is a non-profit community center in Ponta Delgada dedicated to creativity, inclusion, and collective well-being — through art, activity, and connection.</p>
+
+      <p>We’re always grateful for volunteers who offer their time — helping at events, supporting workshops, sharing knowledge, or simply showing up in presence and care.</p>
+
+      <p>Volunteers enjoy <strong>free access</strong> to all our programs and activities, and we’re happy to provide <strong>Bescheinigungen oder Zeugnisse</strong> (certificates or letters of reference) for your contribution to the community.</p>
+
+      <p>Interested? Just reach out:<br>
+        <a href="mailto:premissahibrida@gmail.com">premissahibrida@gmail.com</a>
+      </p>
     </section>
   </main>
 
