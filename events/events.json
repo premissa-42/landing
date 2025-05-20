@@ -3,14 +3,32 @@
     "title": "Brunch, babe?",
     "date": "2025-06-28T12:00",
     "location": "Premissa",
-    "description": "Make your banner or just have hot buns & espumante on ice.",
-    "link": "/landing/events/Pride-2025.html"
+    "description": "Make your banner for pride or just have some hot buns & espumante on ice.",
+    "link": "/landing/events/Pride-2025.html",
+    "type": "event"
   },
   {
-  "title": "Mapping Flores",
-  "date": "2024-09-14T18:00",
-  "location": "Flores Island – Lajes",
-  "description": "An immersive visual trail blending community storytelling, interactive art, and geocaching on Flores.",
-  "link": "/landing/events/Mapping-Flores.html"
-}
+    "title": "Mapping Flores",
+    "date": "2024-09-14T18:00",
+    "location": "Flores Island – Lajes",
+    "description": "An immersive trail blending community storytelling, interactive art, and geocaching.",
+    "link": "/landing/events/Mapping-Flores.html",
+    "type": "event"
+  },
+  {
+    "title": "Open Call: Youth VR Lab",
+    "date": "2024-06-01T00:00",
+    "location": "Online",
+    "description": "Apply for a virtual residency and showcase your vision in Horizon.",
+    "link": "/landing/opportunities/YouthVR.html",
+    "type": "opportunity"
+  },
+  {
+    "title": "Digital Memory Garden – Internal Preview",
+    "date": "2025-03-01T18:00",
+    "location": "Studio 42",
+    "description": "A prototype VR showcase of queer voices in motion.",
+    "link": "/map/horizon.html",
+    "type": "event"
+  }
 ]
