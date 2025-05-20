@@ -23,16 +23,4 @@
     "link": "/landing/opportunities/YouthVR.html",
     "type": "opportunity"
   }
-  {
-  "title": "Social Hours",
-  "recurring": {
-    "daysOfWeek": [1],            // 1 = Monday
-    "startTime": "18:00",
-    "endTime": "21:00"
-  },
-  "location": "Premissa",
-  "description": "Play games, work out, read, or have a coffee together at the community center.",
-  "link": "#",
-  "type": "event"
-}
 ]
