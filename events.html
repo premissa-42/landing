@@ -23,6 +23,10 @@
       margin: 1rem 0;
       color: white;
     }
+    .event-card.recurring {
+      border: 1px dashed #666;
+      background-color: #1a1a1a;
+    }
     .date {
       font-style: italic;
       color: #ccc;
@@ -57,12 +61,17 @@
       <p>Meet 42 and fall in love.</p>
     </section>
 
-    <!-- 📅 Calendar Integration -->
-   
-
     <section class="events-list">
       <h2>Upcoming Events</h2>
-      <div id="upcoming-events"></div>
+      <div id="upcoming-events">
+        <!-- Manually inserted recurring event -->
+        <div class="event-card recurring">
+          <h3>Social Hours – Every Monday</h3>
+          <p class="date">Weekly · Mondays · 18:00–21:00</p>
+          <p>Play games, work out, read, or have a coffee at Premissa with others.</p>
+          <p><strong>Location:</strong> Premissa</p>
+        </div>
+      </div>
 
       <h2>Past Events</h2>
       <div id="past-events"></div>
@@ -71,7 +80,8 @@
       <h2>Opportunities</h2>
       <div id="opportunities"></div>
     </section>
-     <div id="calendar"></div>
+
+    <div id="calendar"></div>
   </main>
 
   <footer>
@@ -105,7 +115,6 @@
         calendar.render();
 
         const pastEvents = [];
-        let pastShown = 0;
 
         events.forEach(event => {
           const eventDate = new Date(event.date);
@@ -139,10 +148,6 @@
           });
         } else {
           pastEvents.forEach(card => past.appendChild(card));
-        }
-
-        if (upcoming.childNodes.length === 0) {
-          upcoming.innerHTML = "<p><em>No upcoming events.</em></p>";
         }
 
         if (opportunities.childNodes.length === 0) {
