@@ -69,7 +69,7 @@
           <h3>Social Hours – Every Monday</h3>
           <p class="date">Weekly · Mondays · 18:00–21:00</p>
           <p>Play games, work out, read, or have a coffee at Premissa with others.</p>
-          <p><strong>Location:</strong> Premissa</p>
+          <p><strong>Location:</strong> <a href="https://maps.google.com/?q=Rua+do+Laureano+200/11,+Ponta+Delgada" target="_blank" style="color:#ffccff; text-decoration: underline;">Premissa</a></p>
         </div>
       </div>
 
@@ -117,16 +117,22 @@
         const pastEvents = [];
 
         events.forEach(event => {
-          const eventDate = new Date(event.date);
-          const card = document.createElement("div");
-          card.classList.add("event-card");
-          card.innerHTML = `
-            <h3>${event.title}</h3>
-            <p class="date">${eventDate.toLocaleString()}</p>
-            <p>${event.description}</p>
-            <p><strong>${event.location}</strong></p>
-            <a href="${event.link}" target="_blank">More Info</a>
-          `;
+  const eventDate = new Date(event.date);
+  const card = document.createElement("div");
+  card.classList.add("event-card");
+
+  // Wenn Location "Premissa", dann verlinken:
+  const locationHTML = event.location === "Premissa"
+    ? `<a href="https://maps.google.com/?q=Rua+do+Laureano+200/11,+Ponta+Delgada" target="_blank" style="color:#ffccff; text-decoration: underline;">${event.location}</a>`
+    : event.location;
+
+  card.innerHTML = `
+    <h3>${event.title}</h3>
+    <p class="date">${eventDate.toLocaleString()}</p>
+    <p>${event.description}</p>
+    <p><strong>Location:</strong> ${locationHTML}</p>
+    <a href="${event.link}" target="_blank">More Info</a>
+  `;
 
           if (event.type === "opportunity") {
             opportunities.appendChild(card);
