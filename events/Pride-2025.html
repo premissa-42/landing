@@ -52,6 +52,11 @@
       margin: 0.5rem 0;
     }
 
+    .details a.location {
+      color: #ffccff;
+      text-decoration: underline;
+    }
+
     .button {
       display: inline-block;
       margin-top: 1.5rem;
@@ -83,6 +88,35 @@
       border: 0;
     }
 
+    .sponsors {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 3rem;
+      gap: 1rem;
+    }
+
+    .sponsors img {
+      height: 60px;
+      max-width: 180px;
+      object-fit: contain;
+      margin: 0 0.5rem;
+    }
+
+    .sponsor-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .caption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
     footer {
       margin-top: 3rem;
       font-size: 0.8rem;
@@ -95,7 +129,12 @@
 
   <div class="details">
     <p><strong>28.06.25 | 12:00–15:00</strong></p>
-    <p>Where: Premissa (Rua do Laureano 200/11, Ponta Delgada)</p>
+    <p>
+      Where: 
+      <a class="location" href="https://maps.google.com/?q=Rua+do+Laureano+200/11,+Ponta+Delgada" target="_blank">
+        Premissa (Rua do Laureano 200/11, Ponta Delgada)
+      </a>
+    </p>
     <p>Start the day of celebration with hot buns & Espumante on ice 🍾</p>
     <p>Make your banner with us — materials provided.</p>
     <a class="button" href="https://docs.google.com/document/d/1W757ZOB2q7B2gWzocB8rnb5rmQQL7yo-hKq0VlEqCts/edit?usp=drivesdk" target="_blank">
@@ -110,6 +149,24 @@
       loading="lazy" 
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
+  </div>
+
+  <div class="sponsors">
+    <div class="sponsor-row">
+      <img src="../assets/Premissa_Logo_transparent.png" alt="Premissa Logo" />
+    </div>
+    <p class="caption">An event by Premissa</p>
+
+    <div class="sponsor-row">
+      <img src="../assets/Jovensmais.jpg" alt="Jovens+" />
+      <img src="../assets/Drac-rjaac.png" alt="DRAC" />
+    </div>
+    <p class="caption">Funded by Jovens+ and DRAC</p>
+
+    <div class="sponsor-row">
+      <img src="../assets/Azores-Pride.png" alt="Azores Pride" />
+    </div>
+    <p class="caption">In partnership with Azores Pride</p>
   </div>
 
   <footer>
