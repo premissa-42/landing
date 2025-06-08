@@ -134,7 +134,7 @@
     for (let i = 0; i < imagesPerPage; i++) {
       const index = (currentIndex + i) % totalImages + 1;
       const img = document.createElement('img');
-      img.src = `assets/IG-Content/Picture (${index}).webp`;
+      img.src = `../assets/IG-Content/Picture (${index}).webp`;
       img.alt = `Instagram image ${index}`;
       galleryEl.appendChild(img);
     }
