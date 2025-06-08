@@ -2,38 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" Content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Premissa – Who We Are</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&family=DM+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
-      padding: 0;
-      background-color: #0a0a0a;
-      color: #ffffff;
-      font-family: 'Space Grotesk', sans-serif;
-      line-height: 1.6;
-    }
-
-    .back-link {
-      position: absolute;
-      top: 1rem;
-      left: 1.5rem;
-      font-size: .85rem;
+      background: #0a0a0a;
       color: #fff;
-      text-decoration: none;
-      padding: .4rem 1rem;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.05);
-      border-radius: 4px;
-    }
-
-    .back-link:hover {
-      background: rgba(255,255,255,0.1);
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 0;
     }
 
     .header {
@@ -51,11 +28,6 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .glow {
-      color: white;
-      text-shadow: 0 0 5px #00d4ff, 0 0 10px #ff00ff;
-    }
-
     .section {
       max-width: 1000px;
       margin: 4rem auto;
@@ -63,15 +35,16 @@
     }
 
     .section h2 {
-      font-family: 'DM Mono', monospace;
       font-size: 1.3rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 1rem;
     }
 
-    a {
-      color: #72f1b8;
+    p, li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ddd;
     }
 
     iframe {
@@ -80,26 +53,6 @@
       border: none;
       margin-top: 1rem;
       border-radius: 6px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-      margin-bottom: 4rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.08);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 15px rgba(255,0,255,0.3);
     }
 
     .cta {
@@ -121,143 +74,110 @@
     .cta a:hover {
       opacity: 0.9;
     }
+
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: .85rem;
+      color: #fff;
+      text-decoration: none;
+      padding: .4rem 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.05);
+      border-radius: 4px;
+    }
+
+    .back-link:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(255,255,255,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px rgba(255,0,255,0.3);
+    }
   </style>
 </head>
-  <script>
-  const totalImages = 64;
-  const imagesPerPage = 9;
-  let currentIndex = 0;
-  const galleryEl = document.getElementById('gallery-slider');
-
-  function renderGallery() {
-    galleryEl.innerHTML = '';
-    for (let i = 0; i < imagesPerPage; i++) {
-      const index = (currentIndex + i) % totalImages + 1;
-      const img = document.createElement('img');
-      img.src = `../assets/IG-Content/Picture (${index}).webp`;
-      img.alt = `Instagram image ${index}`;
-      galleryEl.appendChild(img);
-    }
-    currentIndex = (currentIndex + 1) % totalImages; // shift by 1
-  }
-
-  renderGallery();
-  setInterval(renderGallery, 3000); // update every 3 seconds
-</script>
-
 <body>
 
   <a href="/map.html" class="back-link">Map</a>
 
   <div class="header">
-    <h1>PAA - Premissa Açores Associação</h1>
-    <p class="glow">Social, artistic and inclusive Youth Association — rooted in São Miguel.</p>
+    <h1>Premissa Açores Associação</h1>
+    <p class="glow">Social, artistic and inclusive — rooted in São Miguel, moving with light.</p>
   </div>
 
-  <main>
-    <section class="section">
-      <h2>Who We Are</h2>
-      <p>
-        Founded in 2023, <strong>Premissa</strong> is a hybrid community space in Ponta Delgada. We focus on inclusive art,
-        well-being, and community empowerment. We're proudly rooted in LGBTQ+ support, creative expression, and cultural access.
-      </p>
-    </section>
+  <div class="section">
+    <h2>Who We Are</h2>
+    <p>
+      Founded in 2023, <strong>Premissa</strong> is a hybrid community space in Ponta Delgada. We focus on inclusive art,
+      well-being, and community empowerment. We're proudly rooted in LGBTQ+ support, creative expression, and cultural access.
+    </p>
+  </div>
 
-    <section class="section">
-      <h2>Contact & Info</h2>
-      <p><strong>Address:</strong> Rua do Laureano 200/11, 9500-310 Ponta Delgada, São Miguel, Azores</p>
-      <p><strong>Email:</strong> <a href="mailto:premissahibrida@gmail.com">premissahibrida@gmail.com</a></p>
-      <p><strong>Instagram:</strong> <a href="https://instagram.com/premissa_acores" target="_blank">@premissa_acores</a></p>
-      <p><strong>Facebook:</strong> <a href="https://facebook.com/premissa.hibrida" target="_blank">Premissa Híbrida</a></p>
-    </section>
+  <div class="section">
+    <h2>Contact & Info</h2>
+    <p><strong>Address:</strong> Rua do Laureano 200/11, 9500-310 Ponta Delgada, São Miguel, Azores</p>
+    <p><strong>Email:</strong> <a href="mailto:premissahibrida@gmail.com">premissahibrida@gmail.com</a></p>
+    <p><strong>Instagram:</strong> <a href="https://instagram.com/premissa_acores" target="_blank">@premissa_acores</a></p>
+    <p><strong>Facebook:</strong> <a href="https://facebook.com/premissa.hibrida" target="_blank">Premissa Híbrida</a></p>
+  </div>
 
-   <div class="section">
-  <h2>Recent from Instagram</h2>
-  <div class="gallery-slider" id="gallery-slider"></div>
-</div>
- 
-        <img src="assets/IG-Content/Picture (1).webp" alt="Instagram image 1">
-<img src="assets/IG-Content/Picture (2).webp" alt="Instagram image 2">
-<img src="assets/IG-Content/Picture (3).webp" alt="Instagram image 3">
-<img src="assets/IG-Content/Picture (4).webp" alt="Instagram image 4">
-<img src="assets/IG-Content/Picture (5).webp" alt="Instagram image 5">
-<img src="assets/IG-Content/Picture (6).webp" alt="Instagram image 6">
-<img src="assets/IG-Content/Picture (7).webp" alt="Instagram image 7">
-<img src="assets/IG-Content/Picture (8).webp" alt="Instagram image 8">
-<img src="assets/IG-Content/Picture (9).webp" alt="Instagram image 9">
-<img src="assets/IG-Content/Picture (10).webp" alt="Instagram image 10">
-<img src="assets/IG-Content/Picture (11).webp" alt="Instagram image 11">
-<img src="assets/IG-Content/Picture (12).webp" alt="Instagram image 12">
-<img src="assets/IG-Content/Picture (13).webp" alt="Instagram image 13">
-<img src="assets/IG-Content/Picture (14).webp" alt="Instagram image 14">
-<img src="assets/IG-Content/Picture (15).webp" alt="Instagram image 15">
-<img src="assets/IG-Content/Picture (16).webp" alt="Instagram image 16">
-<img src="assets/IG-Content/Picture (17).webp" alt="Instagram image 17">
-<img src="assets/IG-Content/Picture (18).webp" alt="Instagram image 18">
-<img src="assets/IG-Content/Picture (19).webp" alt="Instagram image 19">
-<img src="assets/IG-Content/Picture (20).webp" alt="Instagram image 20">
-<img src="assets/IG-Content/Picture (21).webp" alt="Instagram image 21">
-<img src="assets/IG-Content/Picture (22).webp" alt="Instagram image 22">
-<img src="assets/IG-Content/Picture (23).webp" alt="Instagram image 23">
-<img src="assets/IG-Content/Picture (24).webp" alt="Instagram image 24">
-<img src="assets/IG-Content/Picture (25).webp" alt="Instagram image 25">
-<img src="assets/IG-Content/Picture (26).webp" alt="Instagram image 26">
-<img src="assets/IG-Content/Picture (27).webp" alt="Instagram image 27">
-<img src="assets/IG-Content/Picture (28).webp" alt="Instagram image 28">
-<img src="assets/IG-Content/Picture (29).webp" alt="Instagram image 29">
-<img src="assets/IG-Content/Picture (30).webp" alt="Instagram image 30">
-<img src="assets/IG-Content/Picture (31).webp" alt="Instagram image 31">
-<img src="assets/IG-Content/Picture (32).webp" alt="Instagram image 32">
-<img src="assets/IG-Content/Picture (33).webp" alt="Instagram image 33">
-<img src="assets/IG-Content/Picture (34).webp" alt="Instagram image 34">
-<img src="assets/IG-Content/Picture (35).webp" alt="Instagram image 35">
-<img src="assets/IG-Content/Picture (36).webp" alt="Instagram image 36">
-<img src="assets/IG-Content/Picture (37).webp" alt="Instagram image 37">
-<img src="assets/IG-Content/Picture (38).webp" alt="Instagram image 38">
-<img src="assets/IG-Content/Picture (39).webp" alt="Instagram image 39">
-<img src="assets/IG-Content/Picture (40).webp" alt="Instagram image 40">
-<img src="assets/IG-Content/Picture (41).webp" alt="Instagram image 41">
-<img src="assets/IG-Content/Picture (42).webp" alt="Instagram image 42">
-<img src="assets/IG-Content/Picture (43).webp" alt="Instagram image 43">
-<img src="assets/IG-Content/Picture (44).webp" alt="Instagram image 44">
-<img src="assets/IG-Content/Picture (45).webp" alt="Instagram image 45">
-<img src="assets/IG-Content/Picture (46).webp" alt="Instagram image 46">
-<img src="assets/IG-Content/Picture (47).webp" alt="Instagram image 47">
-<img src="assets/IG-Content/Picture (48).webp" alt="Instagram image 48">
-<img src="assets/IG-Content/Picture (49).webp" alt="Instagram image 49">
-<img src="assets/IG-Content/Picture (50).webp" alt="Instagram image 50">
-<img src="assets/IG-Content/Picture (51).webp" alt="Instagram image 51">
-<img src="assets/IG-Content/Picture (52).webp" alt="Instagram image 52">
-<img src="assets/IG-Content/Picture (53).webp" alt="Instagram image 53">
-<img src="assets/IG-Content/Picture (54).webp" alt="Instagram image 54">
-<img src="assets/IG-Content/Picture (55).webp" alt="Instagram image 55">
-<img src="assets/IG-Content/Picture (56).webp" alt="Instagram image 56">
-<img src="assets/IG-Content/Picture (57).webp" alt="Instagram image 57">
-<img src="assets/IG-Content/Picture (58).webp" alt="Instagram image 58">
-<img src="assets/IG-Content/Picture (59).webp" alt="Instagram image 59">
-<img src="assets/IG-Content/Picture (60).webp" alt="Instagram image 60">
-<img src="assets/IG-Content/Picture (61).webp" alt="Instagram image 61">
-<img src="assets/IG-Content/Picture (62).webp" alt="Instagram image 62">
-<img src="assets/IG-Content/Picture (63).webp" alt="Instagram image 63">
-<img src="assets/IG-Content/Picture (64).webp" alt="Instagram image 64">
+  <div class="section">
+    <h2>Recent from Instagram</h2>
+    <div id="gallery" class="gallery"></div>
+  </div>
 
-      </div>
-    </section>
+  <div class="section">
+    <h2>In the Media</h2>
+    <h3>📰 Açoriano Oriental</h3>
+    <iframe src="https://www.acorianooriental.pt/noticia/premissa-hibrida-brings-together-sports-and-art-350658" title="Premissa in Açoriano Oriental"></iframe>
 
-    <section class="section">
-      <h2>In the Media</h2>
-      <h3>📰 Açoriano Oriental</h3>
-      <iframe src="https://www.acorianooriental.pt/noticia/premissa-hibrida-brings-together-sports-and-art-350658"
-              title="Premissa in Açoriano Oriental"></iframe>
+    <h3>📰 Correio dos Açores</h3>
+    <iframe src="https://correiodosacores.pt/2024/11/26/associacao-premissa-acores-cria-trilho-artistico-nas-flores-para-preservar-o-patrimonio-cultural-e-unir-a-comunidade-local-e-estrangeira/" title="Premissa in Correio dos Açores"></iframe>
+  </div>
 
-      <h3>📰 Correio dos Açores</h3>
-      <iframe src="https://correiodosacores.pt/2024/11/26/associacao-premissa-acores-cria-trilho-artistico-nas-flores-para-preservar-o-patrimonio-cultural-e-unir-a-comunidade-local-e-estrangeira/"
-              title="Premissa in Correio dos Açores"></iframe>
-    </section>
+  <div class="cta">
+    <a href="/participate.html">Get Involved</a>
+  </div>
 
-    <div class="cta">
-      <a href="/participate.html">Get Involved</a>
-    </div>
-  </main>
+  <script>
+    const TOTAL_IMAGES = 64;
+    const IMAGES_PER_PAGE = 9;
+    let currentIndex = 0;
+    const galleryEl = document.getElementById('gallery');
+
+    function renderGallery() {
+      galleryEl.innerHTML = '';
+      for (let i = 0; i < IMAGES_PER_PAGE; i++) {
+        const index = (currentIndex + i) % TOTAL_IMAGES + 1;
+        const img = document.createElement('img');
+        img.src = `assets/IG-content/Picture (${index}).jpg`; // Adjust to .webp if needed
+        img.alt = `Instagram image ${index}`;
+        galleryEl.appendChild(img);
+      }
+      currentIndex = (currentIndex + 1) % TOTAL_IMAGES;
+    }
+
+    renderGallery();
+    setInterval(renderGallery, 5000); // every 5 seconds
+  </script>
+
 </body>
 </html>
