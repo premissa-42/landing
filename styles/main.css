@@ -200,3 +200,27 @@ h1, h2, h3 {
       0 0 40px rgba(255, 255, 255, 0.3);
   }
 }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.08);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255,0,255,0.3);
+}
+.gallery video {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.08);
+}
