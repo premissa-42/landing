@@ -123,6 +123,28 @@
     }
   </style>
 </head>
+  <script>
+  const totalImages = 64;
+  const imagesPerPage = 9;
+  let currentIndex = 0;
+  const galleryEl = document.getElementById('gallery-slider');
+
+  function renderGallery() {
+    galleryEl.innerHTML = '';
+    for (let i = 0; i < imagesPerPage; i++) {
+      const index = (currentIndex + i) % totalImages + 1;
+      const img = document.createElement('img');
+      img.src = `assets/IG-Content/Picture (${index}).webp`;
+      img.alt = `Instagram image ${index}`;
+      galleryEl.appendChild(img);
+    }
+    currentIndex = (currentIndex + 1) % totalImages; // shift by 1
+  }
+
+  renderGallery();
+  setInterval(renderGallery, 3000); // update every 3 seconds
+</script>
+
 <body>
 
   <a href="/map.html" class="back-link">Map</a>
@@ -237,28 +259,5 @@
       <a href="/participate.html">Get Involved</a>
     </div>
   </main>
-<script>
-  const totalImages = 64;
-  const imagesPerPage = 9;
-  let currentIndex = 0;
-
-  const galleryEl = document.getElementById('gallery-slider');
-
-  function renderGallery() {
-    galleryEl.innerHTML = ''; // Clear current images
-    for (let i = 0; i < imagesPerPage; i++) {
-      const index = (currentIndex + i) % totalImages + 1;
-      const img = document.createElement('img');
-      img.src = `assets/IG-Content/Picture (${index}).webp`;
-      img.alt = `Instagram image ${index}`;
-      galleryEl.appendChild(img);
-    }
-    currentIndex = (currentIndex + imagesPerPage) % totalImages;
-  }
-
-  renderGallery(); // initial render
-  setInterval(renderGallery, 5000); // rotate every 5 seconds
-</script>
-
 </body>
 </html>
