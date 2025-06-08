@@ -224,3 +224,23 @@ h1, h2, h3 {
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(255,255,255,0.08);
 }
+.gallery-slider {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-slider img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255,255,255,0.08);
+  transition: transform 0.3s ease;
+}
+
+.gallery-slider img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255,0,255,0.3);
+}
