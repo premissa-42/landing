@@ -140,64 +140,6 @@
       height: 40px;
       margin: 0 1rem;
     }
-	
-    /* BUBBLES */
-.bubble-zone {
-  position: fixed;
-  top: 6rem;
-  left: 0;
-  right: 0;
-  bottom: 8rem;
-  pointer-events: none;
-  z-index: 99;
-}
-
- .bubble {
-  position: absolute;
-  padding: 0.6rem 1.2rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: none; /* 🔥 no border line */
-  border-radius: 40px;
-  color: #fff;
-  font-size: 0.9rem;
-  pointer-events: auto;
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  animation: floatRandom 8s ease-in-out infinite alternate;
-  z-index: 100;
-
-  /* 👇 optional glass effect */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-    .bubble.explode {
-      animation: explode 0.6s forwards;
-      pointer-events: none;
-    }
-
-    @keyframes explode {
-      0% { transform: scale(1); opacity: 1; box-shadow: 0 0 10px #ff00ff; }
-      100% { transform: scale(2.2); opacity: 0; box-shadow: 0 0 80px #ff00ff; }
-    }
-
-    @keyframes floatRandom {
-      0%   { transform: translate(0, 0); }
-      50%  { transform: translate(10px, -15px); }
-      100% { transform: translate(-10px, 15px); }
-    }
-.trail-dot {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: screen;
-  opacity: 0.8;
-  filter: blur(1px);
-  transition: left 0.15s ease, top 0.15s ease, background 0.3s;
-}
   </style>
 </head>
 <body>
@@ -224,160 +166,19 @@
   <p>Not not a museeum.</p>
   <a href="map.html" class="enter-button">Enter Now</a>
 </main>
-<div class="bubble-zone">
-  	<div class="bubble">queer memory</div>
-  	<div class="bubble">island voices</div>
-  	<div class="bubble">digital futures</div>
-  	<div class="bubble">soft resistance</div>
-   	<div class="bubble">memory loops</div>
-	<div class="bubble">future queerings</div>
-	<div class="bubble">radical softness</div>
-	<div class="bubble">postbinary pulse</div>
 
-	
-</div>
-
-<footer style="text-align: center; padding: 3rem 1rem 2rem; opacity: 0.6;">
+<footer>
   <p style="margin-bottom: 0.5rem;">A project by</p>
-  <img src="assets/Premissa_Logo_transparent.png" alt="Premissa Logo" style="height: 60px; margin: 0 1rem;" />
+  <img src="assets/Premissa_Logo_transparent.png" alt="Premissa Logo" style="height: 60px;" />
   <p style="margin: 2rem 0 0.5rem;">Funded by</p>
   <img src="assets/Jovensmais.jpg" alt="Jovens+" style="height: 50px; max-width: 200px;" />
   <img src="assets/Drac-rjaac.png" alt="Drac-rjaac" style="height: 50px; max-width: 200px;" />
-
   <div style="margin-top: 2rem; font-size: 0.85rem;">
     <a href="about.html" style="margin: 0 1rem; color: #ccc; text-decoration: none;">About</a> |
     <a href="participate.html" style="margin: 0 1rem; color: #ccc; text-decoration: none;">Participate</a> |
     <a href="contact.html" style="margin: 0 1rem; color: #ccc; text-decoration: none;">Contact</a>
   </div>
 </footer>
-<script>
-  const bubbles = document.querySelectorAll('.bubble');
-  const zone = document.querySelector('.bubble-zone');
-
-  const main = document.querySelector('main');
-  const mainRect = main.getBoundingClientRect();
-
-  const protectedArea = {
-    x: mainRect.left,
-    y: mainRect.top,
-    width: mainRect.width,
-    height: mainRect.height
-  };
-
-  function isOverlappingProtectedArea(x, y, width, height) {
-    return !(
-      x + width < protectedArea.x ||
-      x > protectedArea.x + protectedArea.width ||
-      y + height < protectedArea.y ||
-      y > protectedArea.y + protectedArea.height
-    );
-  }
-
-  function randomPosition(el) {
-    const zoneRect = zone.getBoundingClientRect();
-    const maxX = zoneRect.width - 140;
-    const maxY = zoneRect.height - 60;
-
-    let x, y, tries = 0;
-    do {
-      x = Math.random() * maxX;
-      y = Math.random() * maxY;
-      tries++;
-      if (tries > 50) break;
-    } while (isOverlappingProtectedArea(x + zoneRect.left, y + zoneRect.top, 140, 60));
-
-    el.style.left = `${x}px`;
-    el.style.top = `${y}px`;
-  }
-
-  let explodeCount = 0;
-  let rainbowActive = false;
-  let stopRespawning = false;
-
-  function triggerRainbowCursor() {
-    if (rainbowActive) return;
-    rainbowActive = true;
-
-    const trail = [];
-    const colors = ['#ff0080', '#ffbf00', '#00ffbf', '#00bfff', '#bf00ff', '#ff0080'];
-    let colorIndex = 0;
-
-    for (let i = 0; i < 12; i++) {
-      const dot = document.createElement('div');
-      dot.className = 'trail-dot';
-      dot.style.background = colors[i % colors.length];
-      document.body.appendChild(dot);
-      trail.push(dot);
-    }
-
-    let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-
-    window.addEventListener('mousemove', e => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    });
-
-    function animateTrail() {
-      let x = mouse.x;
-      let y = mouse.y;
-
-      trail.forEach((dot, i) => {
-  dot.style.left = `${x}px`;
-  dot.style.top = `${y}px`;
-  dot.style.background = colors[(colorIndex + i) % colors.length];
-  x += Math.sin(i) * 4;
-  y += Math.cos(i) * 4;
-});
-	    
-
-      colorIndex = (colorIndex + 1) % colors.length;
-      requestAnimationFrame(animateTrail);
-    }
-
-    animateTrail();
-  }
-
-  function respawn(el) {
-    el.classList.remove('explode');
-    if (!stopRespawning) {
-      randomPosition(el);
-    } else {
-      el.remove(); // completely remove the bubble if we stop
-    }
-  }
-
-  bubbles.forEach((bubble) => {
-    randomPosition(bubble);
-
-    bubble.addEventListener('mouseenter', () => {
-      bubble.classList.add('explode');
-      explodeCount++;
-
-      if (explodeCount === 15) {
-        triggerRainbowCursor();
-        stopRespawning = true;
-      }
-
-      setTimeout(() => {
-        respawn(bubble);
-      }, 1000);
-    });
-  });
-
-  window.addEventListener('resize', () => {
-    const mainRect = main.getBoundingClientRect();
-    protectedArea.x = mainRect.left;
-    protectedArea.y = mainRect.top;
-    protectedArea.width = mainRect.width;
-    protectedArea.height = mainRect.height;
-
-    if (!stopRespawning) {
-      bubbles.forEach(randomPosition);
-    }
-  });
-</script>
-
-
 
 </body>
 </html>
