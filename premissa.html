@@ -122,7 +122,8 @@
 .review {
   background: #111;
   border-radius: 6px;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.2rem; /* vorher 1rem 1.5rem */
+  min-height: auto;     /* optional, falls vorher fix */
   box-shadow: 0 0 8px rgba(255,255,255,0.05);
 }
 
@@ -251,7 +252,7 @@ We believe spaces matter. Premissa exists to provide a physical and cultural env
     renderGallery();
     setInterval(renderGallery, 5000); // every 5 seconds
   </script>
-<div class="section" style="margin-top: 8rem;">
+<div class="section">
   <h2>Community Feedback</h2>
   <div class="grid">
 
