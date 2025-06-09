@@ -3,31 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>42 – About</title>
-  <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0a0a0a;
+      color: #f0f0f0;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      color: #9e8cff;
+    }
+
+    .nav-links a {
+      color: #f0f0f0;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #9e8cff;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 5rem auto;
+      padding: 0 2rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      opacity: 0.6;
+    }
+
+    footer img {
+      height: 40px;
+      margin: 0 1rem;
+    }
+  </style>
 </head>
 <body>
 
-  <a href="map.html" class="back-link">← Map</a>
-
-  <div class="header">
-    <h1>About the Project</h1>
-    <p class="glow">Digital tools. Radical access. Azorean futures.</p>
+<nav>
+  <div class="logo">42</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a href="map.html">Map ▾</a>
+      <div class="dropdown-content">
+        <a href="map/observatory.html">Observatory</a>
+        <a href="map/nebula.html">Nebula</a>
+        <a href="map/studio.html">Studio</a>
+        <a href="map/horizon.html">Horizon</a>
+      </div>
+    </div>
+    <a href="events.html">Events</a>
+    <a href="about.html">About</a>
   </div>
+</nav>
 
-  <section class="section">
-    <p><strong>42</strong> is a 60m² space inside the Premissa community center in Ponta Delgada, São Miguel (Azores). It's equipped with digital tools, including VR headsets and projection equipment.</p>
+<main>
+  <h1>About the Project</h1>
+  <p><strong>42</strong> is a 60m² space inside the Premissa community center in Ponta Delgada, São Miguel (Azores). It's equipped with digital tools, including VR headsets and projection equipment.</p>
 
-    <p>Most activities are free and focus on young people and people from marginalized backgrounds, with special attention to LGBTQ+ youth.</p>
+  <p>Most activities are free and focus on young people and people from marginalized backgrounds, with special attention to LGBTQ+ youth.</p>
 
-    <p>42 hosts exhibitions, workshops, and virtual reality experiences, and brings international projects and artworks to the island.</p>
+  <p>42 hosts exhibitions, workshops, and virtual reality experiences, and brings international projects and artworks to the island.</p>
 
-    <p>The project is run by <a href="premissa.html" style="color: #9e8cff; text-decoration: underline;">PAA – Premissa Açores Associação</a>, with support from <strong>Jovens+</strong> and <strong>Drac-RJAAC</strong>.</p>
-  </section>
+<p>The project is run by <a href="premissa.html" style="color: #9e8cff; text-decoration: underline;">PAA – Premissa Açores Associação</a>, with support from <strong>Jovens+</strong> and <strong>Drac-RJAAC</strong>.</p>
+</main>
 
-  <div class="cta">
-    <a href="participate.html">Get Involved</a>
-  </div>
+<footer>
+  <p>A project by</p>
+  <img src="assets/Premissa_Logo_transparent.png" alt="Premissa Logo" />
+  <p style="margin: 2rem 0 0.5rem;">Funded by</p>
+  <img src="assets/Jovensmais.jpg" alt="Jovens+" />
+  <img src="assets/Drac-rjaac.png" alt="Drac-rjaac" />
+</footer>
 
 </body>
 </html>
