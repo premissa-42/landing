@@ -42,7 +42,7 @@
 
     main {
       padding: 6rem 2rem;
-      max-width: 800px;
+      max-width: 1200px;
       margin: auto;
       text-align: center;
     }
@@ -88,36 +88,30 @@
       text-decoration: none;
       border-radius: 6px;
       transition: background 0.3s ease;
+      margin-bottom: 3rem;
     }
 
     .enter-button:hover {
       background: #8a2be2;
     }
 
-    /* Slideshow Styles */
-    .slideshow-container {
-      max-width: 800px;
-      position: relative;
-      margin: 3rem auto;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding-top: 3rem;
     }
 
-    .slide {
-      display: none;
-    }
-
-    .slide img {
+    .gallery img {
       width: 100%;
+      height: auto;
       border-radius: 8px;
-      box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+      box-shadow: 0 0 12px rgba(255, 0, 255, 0.15);
+      transition: transform 0.3s ease;
     }
 
-    .fade {
-      animation: fadeEffect 1.5s ease-in-out;
-    }
-
-    @keyframes fadeEffect {
-      from { opacity: 0.3 }
-      to { opacity: 1 }
+    .gallery img:hover {
+      transform: scale(1.02);
     }
 
     footer {
@@ -156,27 +150,20 @@
   <h1 class="shiny-42">42</h1>
   <p>Not not a museeum.</p>
 
-  <!-- SLIDESHOW START -->
-  <div class="slideshow-container">
-    <div class="slide fade">
-      <img src="assets/IG-Content/Bild (1).webp" alt="Slide 1">
-    </div>
-    <div class="slide fade">
-      <img src="assets/IG-Content/Bild (10).webp" alt="Slide 2">
-    </div>
-    <div class="slide fade">
-      <img src="assets/IG-Content/Bild (11).webp" alt="Slide 3">
-    </div>
-    <div class="slide fade">
-      <img src="assets/IG-Content/Bild (12).webp" alt="Slide 4">
-    </div>
-    <div class="slide fade">
-      <img src="assets/IG-Content/Bild (13).webp" alt="Slide 5">
-    </div>
-  </div>
-  <!-- SLIDESHOW END -->
-
   <a href="map.html" class="enter-button">Enter Now</a>
+
+  <div class="gallery">
+    <!-- Bilder automatisch eingebunden -->
+    <!-- ↓↓↓ paste or expand as needed ↓↓↓ -->
+    <!-- Du kannst auch Python oder Bash verwenden um diese Liste zu erzeugen -->
+    <!-- Hier Bild 1–70 -->
+    <!-- Du kannst diesen Block beliebig erweitern -->
+    <!-- START BILD -->
+{%- for i in range(1, 62) %}
+    <img src="assets/IG-Content/Bild ({{ i }}).webp" alt="Bild {{ i }}">
+{%- endfor %}
+    <!-- END BILD -->
+  </div>
 </main>
 
 <footer>
@@ -191,23 +178,6 @@
     <a href="contact.html" style="margin: 0 1rem; color: #ccc; text-decoration: none;">Contact</a>
   </div>
 </footer>
-
-<!-- SLIDESHOW SCRIPT -->
-<script>
-  let slideIndex = 0;
-  showSlides();
-
-  function showSlides() {
-    const slides = document.getElementsByClassName("slide");
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 3500); // Change image every 3.5 seconds
-  }
-</script>
 
 </body>
 </html>
