@@ -40,36 +40,6 @@
       color: #9e8cff;
     }
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #111;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      padding: 0.5rem;
-      border: 1px solid #333;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      color: #f0f0f0;
-      display: block;
-      padding: 0.25rem 0;
-      text-decoration: none;
-    }
-
-    .dropdown-content a:hover {
-      color: #9e8cff;
-    }
-
     main {
       padding: 6rem 2rem;
       max-width: 800px;
@@ -109,12 +79,6 @@
       }
     }
 
-    p {
-      font-size: 1.2rem;
-      color: #ccc;
-      margin-bottom: 2rem;
-    }
-
     .enter-button {
       display: inline-block;
       padding: 0.8rem 2rem;
@@ -128,6 +92,32 @@
 
     .enter-button:hover {
       background: #8a2be2;
+    }
+
+    /* Slideshow Styles */
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: 3rem auto;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+    }
+
+    .fade {
+      animation: fadeEffect 1.5s ease-in-out;
+    }
+
+    @keyframes fadeEffect {
+      from { opacity: 0.3 }
+      to { opacity: 1 }
     }
 
     footer {
@@ -165,6 +155,27 @@
 <main>
   <h1 class="shiny-42">42</h1>
   <p>Not not a museeum.</p>
+
+  <!-- SLIDESHOW START -->
+  <div class="slideshow-container">
+    <div class="slide fade">
+      <img src="assets/IG-Content/Bild (1).webp" alt="Slide 1">
+    </div>
+    <div class="slide fade">
+      <img src="assets/IG-Content/Bild (10).webp" alt="Slide 2">
+    </div>
+    <div class="slide fade">
+      <img src="assets/IG-Content/Bild (11).webp" alt="Slide 3">
+    </div>
+    <div class="slide fade">
+      <img src="assets/IG-Content/Bild (12).webp" alt="Slide 4">
+    </div>
+    <div class="slide fade">
+      <img src="assets/IG-Content/Bild (13).webp" alt="Slide 5">
+    </div>
+  </div>
+  <!-- SLIDESHOW END -->
+
   <a href="map.html" class="enter-button">Enter Now</a>
 </main>
 
@@ -180,6 +191,23 @@
     <a href="contact.html" style="margin: 0 1rem; color: #ccc; text-decoration: none;">Contact</a>
   </div>
 </footer>
+
+<!-- SLIDESHOW SCRIPT -->
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    const slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3500); // Change image every 3.5 seconds
+  }
+</script>
 
 </body>
 </html>
