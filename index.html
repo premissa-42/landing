@@ -107,13 +107,15 @@
     }
 
     .slideshow-image {
-      width: 100%;
-      max-width: 250px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(255, 0, 255, 0.15);
-      transition: transform 0.3s ease;
-    }
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.15);
+  transition: transform 0.3s ease;
+}
+
 
     footer {
       text-align: center;
