@@ -7,83 +7,150 @@
   <link rel="stylesheet" href="styles/main.css" />
   <style>
     body {
-      background: #0a0a0a;
-      color: #ffffff;
-      font-family: 'DM Mono', monospace;
       margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0a0a0a;
+      color: #f0f0f0;
     }
+
     nav {
+      background-color: #111;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      border-bottom: 1px solid #333;
     }
+
     .logo {
-      font-size: 1.5rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
     }
+
     .nav-links a {
-      color: #ffffff;
+      color: #f0f0f0;
+      text-decoration: none;
       margin-left: 1.5rem;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #9e8cff;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #111;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      padding: 0.5rem;
+      border: 1px solid #333;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: #f0f0f0;
+      display: block;
+      padding: 0.25rem 0;
       text-decoration: none;
     }
+
+    .dropdown-content a:hover {
+      color: #9e8cff;
+    }
+
     main {
       max-width: 800px;
       margin: 4rem auto;
       padding: 0 2rem;
     }
+
     h1 {
-      font-size: 2.5rem;
-      text-transform: uppercase;
+      font-size: 2rem;
       letter-spacing: 1px;
-      margin-bottom: 1rem;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
     }
-    .info-block {
-      margin-top: 2rem;
-    }
-    .info-block p {
-      margin: 0.5rem 0;
+
+    p {
       font-size: 1rem;
+      color: #ccc;
+      margin: 0.5rem 0 1.2rem;
       line-height: 1.6;
     }
+
     a {
       color: #ccccff;
       text-decoration: underline;
     }
+
     footer {
       text-align: center;
-      padding: 4rem 0 2rem 0;
-      font-size: 0.9rem;
-      color: #666;
+      padding: 3rem 1rem 2rem;
+      opacity: 0.6;
+    }
+
+    footer img {
+      height: 40px;
+      margin: 0 1rem;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">42</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="map.html">Map</a>
-      <a href="events.html">Events</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+
+<nav>
+  <div class="logo">42</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a href="map.html">Map ▾</a>
+      <div class="dropdown-content">
+        <a href="map/observatory.html">Observatory</a>
+        <a href="map/nebula.html">Nebula</a>
+        <a href="map/studio.html">Studio</a>
+        <a href="map/horizon.html">Horizon</a>
+      </div>
     </div>
-  </nav>
+    <a href="events.html">Events</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
 
-  <main>
-    <h1>Contact</h1>
+<main>
+  <h1>Contact</h1>
 
-    <div class="info-block">
-      <p><strong>Organization:</strong> PAA – Premissa Açores Associação</p>
-      <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/LkWemmdUsnsSnc7E9" target="_blank">Rua do Laureano 200/11, 9500-310 Ponta Delgada, São Miguel, Azores</a></p>
-      <p><strong>Email:</strong> <a href="mailto:premissahibrida@gmail.com">premissahibrida@gmail.com</a></p>
-      <p><strong>Website:</strong> <a href="https://www.premissahibrida.com" target="_blank">premissahibrida.com</a></p>
-      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/premissa_acores" target="_blank">@premissa_acores</a></p>
-      <p><strong>Facebook:</strong> <a href="https://facebook.com/premissa.hibrida" target="_blank">Premissa Híbrida</a></p>
-    </div>
-  </main>
+  <p><strong>Organization:</strong><br/>PAA – Premissa Açores Associação</p>
+  <p><strong>Location:</strong><br/><a href="https://maps.app.goo.gl/LkWemmdUsnsSnc7E9" target="_blank">Rua do Laureano 200/11, 9500-310 Ponta Delgada, São Miguel, Azores</a></p>
+  <p><strong>Email:</strong><br/><a href="mailto:premissahibrida@gmail.com">premissahibrida@gmail.com</a></p>
+  <p><strong>Website:</strong><br/><a href="https://www.premissahibrida.com" target="_blank">premissahibrida.com</a></p>
+  <p><strong>Instagram:</strong><br/><a href="https://www.instagram.com/premissa_acores" target="_blank">@premissa_acores</a></p>
+  <p><strong>Facebook:</strong><br/><a href="https://facebook.com/premissa.hibrida" target="_blank">Premissa Híbrida</a></p>
+</main>
 
-  <footer>
-    © 2025 Premissa & 42
-  </footer>
+<footer>
+  <p style="margin-bottom: 0.5rem;">A project by</p>
+  <img src="assets/Premissa_Logo_transparent.png" alt="Premissa Logo" style="height: 60px;" />
+  <p style="margin: 2rem 0 0.5rem;">Funded by</p>
+  <img src="assets/Jovensmais.jpg" alt="Jovens+" style="height: 50px; max-width: 200px;" />
+  <img src="assets/Drac-rjaac.png" alt="Drac-rjaac" style="height: 50px; max-width: 200px;" />
+  <div style="margin-top: 2rem; font-size: 0.85rem;">
+    <a href="about.html" style="margin: 0 1rem; color: #ccc; text-decoration: none;">About</a> |
+    <a href="participate.html" style="margin: 0 1rem; color: #ccc; text-decoration: none;">Participate</a> |
+    <a href="contact.html" style="margin: 0 1rem; color: #ccc; text-decoration: none;">Contact</a>
+  </div>
+</footer>
+
 </body>
 </html>
