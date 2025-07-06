@@ -7,53 +7,53 @@
   <link rel="stylesheet" href="styles/main.css" />
   <style>
     body {
-      background-color: #0a0a0a;
+      background: #0a0a0a;
       color: #ffffff;
       font-family: 'DM Mono', monospace;
       margin: 0;
-      padding: 0;
     }
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: transparent;
     }
-    nav .logo {
+    .logo {
       font-size: 1.5rem;
-      color: #ffffff;
     }
-    nav .nav-links a {
+    .nav-links a {
       color: #ffffff;
-      text-decoration: none;
       margin-left: 1.5rem;
+      text-decoration: none;
     }
     main {
       max-width: 800px;
-      margin: 3rem auto;
-      padding: 2rem;
+      margin: 4rem auto;
+      padding: 0 2rem;
     }
     h1 {
       font-size: 2.5rem;
-      letter-spacing: 2px;
       text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
     }
-    .contact-card {
+    .info-block {
       margin-top: 2rem;
-      padding: 2rem;
-      background-color: #111111;
-      border-radius: 1rem;
     }
-    .contact-card p {
+    .info-block p {
       margin: 0.5rem 0;
-    }
-    .highlight {
-      color: #ffccff;
+      font-size: 1rem;
+      line-height: 1.6;
     }
     a {
       color: #ccccff;
       text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 4rem 0 2rem 0;
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
@@ -71,11 +71,10 @@
 
   <main>
     <h1>Contact</h1>
-    <p>Reach out to <span class="highlight">Premissa & 42</span>. We welcome collaboration, feedback, and cosmic conversation.</p>
 
-    <div class="contact-card">
+    <div class="info-block">
       <p><strong>Organization:</strong> PAA – Premissa Açores Associação</p>
-      <p><strong>Address:</strong> <a href="https://maps.app.goo.gl/LkWemmdUsnsSnc7E9" target="_blank">Rua do Laureano 200/11, Ponta Delgada, Azores</a></p>
+      <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/LkWemmdUsnsSnc7E9" target="_blank">Rua do Laureano 200/11, 9500-310 Ponta Delgada, São Miguel, Azores</a></p>
       <p><strong>Email:</strong> <a href="mailto:premissahibrida@gmail.com">premissahibrida@gmail.com</a></p>
       <p><strong>Website:</strong> <a href="https://www.premissahibrida.com" target="_blank">premissahibrida.com</a></p>
       <p><strong>Instagram:</strong> <a href="https://www.instagram.com/premissa_acores" target="_blank">@premissa_acores</a></p>
@@ -83,7 +82,7 @@
     </div>
   </main>
 
-  <footer style="text-align: center; padding: 2rem 0; font-size: 0.9rem; color: #777;">
+  <footer>
     © 2025 Premissa & 42
   </footer>
 </body>
