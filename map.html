@@ -14,6 +14,41 @@
       overflow-x: hidden;
     }
 
+    /* ↓↓↓ ADD THIS ↓↓↓ */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #111;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      padding: 0.5rem;
+      border: 1px solid #333;
+      white-space: nowrap;
+      min-width: 180px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.3rem 0.75rem;
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .dropdown-content a:hover {
+      color: #ff75ff;
+    }
+    /* ↑↑↑ END ADDITION ↑↑↑ */
+
     .map-container {
       display: flex;
       justify-content: center;
@@ -70,8 +105,7 @@
       display: block;
     }
 
-    /* Positions around center */
-    #planet1 { top: 20%; left: 50%; transform: translateX(-50%) rotate(0deg); animation: orbit1 20s linear infinite; }
+    #planet1 { top: 20%; left: 50%; transform: translateX(-50%); animation: orbit1 20s linear infinite; }
     #planet2 { top: 50%; left: 85%; transform: translate(-50%, -50%); animation: orbit2 25s linear infinite; }
     #planet3 { top: 80%; left: 50%; transform: translateX(-50%); animation: orbit3 30s linear infinite; }
     #planet4 { top: 50%; left: 10%; transform: translate(-50%, -50%); animation: orbit4 35s linear infinite; }
@@ -111,55 +145,53 @@
 </head>
 <body>
   <nav>
-  <div class="logo">42</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <div class="dropdown">
-      <a href="map.html">Map ▾</a>
-      <div class="dropdown-content">
-        <a href="map/WalkableResearch.html">Walkable Research</a>
-        <a href="map/QueerFocus.html">Queer Focus</a>
-        <a href="map/Bepart.html">Be Part</a>
-        <a href="map/VRExhibitions.html">VR Exhibitions</a>
+    <div class="logo">42</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="map.html">Map ▾</a>
+        <div class="dropdown-content">
+          <a href="map/WalkableResearch.html">Walkable Research</a>
+          <a href="map/QueerFocus.html">Queer Focus</a>
+          <a href="map/Bepart.html">Be Part</a>
+          <a href="map/VRExhibitions.html">VR Exhibitions</a>
+        </div>
       </div>
+      <a href="events.html">Events</a>
+      <a href="about.html">About</a>
     </div>
-    <a href="events.html">Events</a>
-    <a href="about.html">About</a>
-  </div>
-</nav>
-  
+  </nav>
+
   <div class="map-container">
     <div class="center-logo">42</div>
 
-    
     <a href="map/WalkableResearch.html">
-  <div id="planet1" class="planet">
-    Walkable Research
-    <div class="tooltip">Research to walk through, hear, and experience.</div>
-  </div>
-</a>
+      <div id="planet1" class="planet">
+        Walkable Research
+        <div class="tooltip">Research to walk through, hear, and experience.</div>
+      </div>
+    </a>
 
-   <a href="map/QueerFocus.html">
-  <div id="planet2" class="planet">
-    Queer Focus
-    <div class="tooltip">Weekly LGBTQIA+ social hours.</div>
-  </div>
-</a>
+    <a href="map/QueerFocus.html">
+      <div id="planet2" class="planet">
+        Queer Focus
+        <div class="tooltip">Weekly LGBTQIA+ social hours.</div>
+      </div>
+    </a>
 
-<a href="map/Bepart.html">
-  <div id="planet3" class="planet">
-    Be Part
-    <div class="tooltip">Volunteering, co-creating, and helping shape the space.</div>
-  </div>
-</a>
+    <a href="map/Bepart.html">
+      <div id="planet3" class="planet">
+        Be Part
+        <div class="tooltip">Volunteering, co-creating, and helping shape the space.</div>
+      </div>
+    </a>
 
-<a href="map/VRExhibitions.html">
-  <div id="planet4" class="planet">
-    VR Exhibitions
-    <div class="tooltip">A VR space for exhibitions, learning tools, and queer narratives.</div>
-  </div>
-</a>
-    
+    <a href="map/VRExhibitions.html">
+      <div id="planet4" class="planet">
+        VR Exhibitions
+        <div class="tooltip">A VR space for exhibitions, learning tools, and queer narratives.</div>
+      </div>
+    </a>
   </div>
 </body>
 </html>
