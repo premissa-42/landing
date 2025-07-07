@@ -74,8 +74,9 @@ nav {
 
 .dropdown-content a {
   display: block;
-  padding: 0.3rem 0;
-  color: #fff;
+  padding: 0.3rem 0.75rem; /* adds horizontal spacing */
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
 .dropdown-content a:hover {
