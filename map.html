@@ -14,7 +14,6 @@
       overflow-x: hidden;
     }
 
-    /* ↓↓↓ ADD THIS ↓↓↓ */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -26,11 +25,14 @@
   background-color: #111;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  padding: 0.5rem 0; /* vertical spacing only */
+  padding: 0.5rem 0;
   border: 1px solid #333;
   white-space: nowrap;
-  width: max-content; /* auto width based on longest item */
-  min-width: 160px; /* optional floor */
+  width: max-content;
+  min-width: 160px;
+  box-sizing: content-box; /* important for even spacing! */
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 }
 
     .dropdown:hover .dropdown-content {
