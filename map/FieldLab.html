@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>42 – Photovoice</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 0;
+    }
+
+    .header {
+      padding: 7rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-family: 'DM Mono', monospace;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #00d4ff, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .archive-item {
+      background-color: #111;
+      padding: 1.2rem;
+      border-radius: 6px;
+      border-left: 3px solid #ff00ff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .cta {
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .cta a {
+      padding: 0.8rem 2rem;
+      background: linear-gradient(to right, #00d4ff, #ff00ff);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta a:hover {
+      opacity: 0.9;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 0.85rem;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 4px;
+    }
+
+    .back-link:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<a href="/landing/map.html" class="back-link">Map</a>
+
+<div class="header">
+  <h1>Walkable Research</h1>
+  <p class="glow">Research to walk through, hear, and experience.</p>
+</div>
+
+<div class="section">
+  <h2>Photovoice at 42</h2>
+  <p>At 42, Photovoice is used as a research method where participants respond to prompts with photography. The images lead to interviews or group reflections, which are anonymised and thematically analysed.</p>
+
+  <p>The results aren’t only presented in reports, but through installations, exhibitions, and cultural programming. It’s a way to make research visible, to use it as a tool for reflection and connection, and to embed it into how cultural spaces work. </p>
+</div>
+
+
+
+<div class="section">
+  <h2>Examples</h2>
+  <div class="archive-grid">
+    <div class="archive-item">
+      <strong>In Between (2023)</strong><br>
+      Research on rurality, queerness, and migration — shown as an immersive installation.
+    </div>
+    <div class="archive-item">
+      <strong>Eu Aqui / Me Here (2022)</strong><br>
+      Reflections on belonging and place — presented as a sound-photo environment.
+    </div>
+    <div class="archive-item">
+      <strong>Private VR Archive</strong><br>
+      Anonymous contributions remixed in spatial and digital formats.
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <a href="/landing/participate.html">Get Involved</a>
+</div>
+
+</body>
+</html>
