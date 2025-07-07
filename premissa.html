@@ -120,6 +120,26 @@
   gap: 1.5rem;
 }
 
+    .slideshow-4 {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 3rem;
+}
+
+.slideshow-image {
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.15);
+  transition: transform 0.3s ease;
+}
+
 .review {
   background: #111;
   border-radius: 6px;
@@ -249,27 +269,30 @@ We believe spaces matter. Premissa exists to provide a physical and cultural env
     <a href="landing/participate.html">Get Involved</a>
   </div>
 
-  <script>
-    const TOTAL_IMAGES = 64;
-    const IMAGES_PER_PAGE = 9;
-    let currentIndex = 0;
-    const galleryEl = document.getElementById('gallery');
+<div class="slideshow-4" id="slideshow"></div>
 
-    function renderGallery() {
-      galleryEl.innerHTML = '';
-      for (let i = 0; i < IMAGES_PER_PAGE; i++) {
-        const index = (currentIndex + i) % TOTAL_IMAGES + 1;
-        const img = document.createElement('img');
-        img.src = `assets/IG-Content/Picture (${index}).webp`; // Adjust to .webp if needed
-        img.alt = `Instagram image ${index}`;
-        galleryEl.appendChild(img);
-      }
-      currentIndex = (currentIndex + 1) % TOTAL_IMAGES;
+<script>
+  const totalImages = 62;
+  const imagesPerSet = 4;
+  const container = document.getElementById('slideshow');
+  let index = 0;
+
+  function updateGallery() {
+    container.innerHTML = "";
+    for (let i = 0; i < imagesPerSet; i++) {
+      const currentIndex = (index + i) % totalImages + 1;
+      const img = document.createElement("img");
+      img.src = "assets/IG-Content/Bild (" + currentIndex + ").webp";
+      img.alt = "Bild " + currentIndex;
+      img.className = "slideshow-image";
+      container.appendChild(img);
     }
+    index = (index + imagesPerSet) % totalImages;
+  }
 
-    renderGallery();
-    setInterval(renderGallery, 5000); // every 5 seconds
-  </script>
+  updateGallery();
+  setInterval(updateGallery, 3000);
+</script>
 <div class="section">
   <h2>Community Feedback</h2>
   <div class="grid">
