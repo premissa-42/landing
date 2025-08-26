@@ -96,7 +96,7 @@
   </footer>
 
   <script>
-    fetch("/landing/events/events.json")
+    fetch("/events/events.json")
       .then(res => res.json())
       .then(events => {
         const now = new Date();
@@ -170,3 +170,4 @@
   </script>
 </body>
 </html>
+
