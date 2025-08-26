@@ -4,7 +4,7 @@
     "date": "2025-06-28T12:00",
     "location": "Premissa",
     "description": "Make your banner or just have hot buns & espumante.",
-    "link": "/landing/events/Pride-2025.html",
+    "link": "events/Pride-2025.html",
     "type": "event"
   },
   {
@@ -12,7 +12,7 @@
     "date": "2024-09-14T18:00",
     "location": "Flores Island",
     "description": "An immersive trail blending community storytelling, art and geocaching.",
-    "link": "/landing/events/Mapping-Flores.html",
+    "link": "events/Mapping-Flores.html",
     "type": "event"
   },
   {
@@ -20,7 +20,7 @@
   "date": "2025",
   "location": "Premissa",
   "description": "Support a creative community and receive a certificate for your contribution.",
-  "link": "/landing/events/volunteering.html",
+  "link": "events/volunteering.html",
   "type": "opportunity"
 }
 
@@ -29,7 +29,7 @@
   "date": "2025-08-18T18:00",
   "location": "Premissa",
   "description": "Barbecue at Premissa. Bring something to cook or a side.",
-  "link": "/landing/events/BBQ_2025-08-18.html",
+  "link": "events/BBQ_2025-08-18.html",
   "type": "event"
 }
 
