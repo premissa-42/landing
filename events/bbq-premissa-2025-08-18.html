@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community BBQ — Premissa — 18 Aug 2025</title>
+  <meta name="description" content="Informal barbecue at Premissa. Bring something to cook or a side." />
+  <style>
+    :root{
+      --bg:#0a0a0a; --fg:#ffffff; --muted:#b6b6b6; --line:#222;
+      --accent:#7ae1bf; --card:#121212; --btn:#1b1b1b;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font:16px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    .wrap{max-width:880px;margin:0 auto;padding:36px 18px 60px}
+    header{margin-bottom:14px}
+    h1{font-size:clamp(26px,4.2vw,40px);margin:.2rem 0 0}
+    .date{color:var(--muted);margin:.25rem 0 0}
+    .card{
+      background:var(--card); border:1px solid var(--line);
+      border-radius:16px; padding:20px; margin-top:14px;
+    }
+    .card p{margin:.25rem 0 .75rem}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:780px){.grid{grid-template-columns:1fr}}
+    .meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:.5rem 0}
+    .meta .box{border:1px solid var(--line);border-radius:12px;padding:12px;background:#0f0f0f}
+    .meta h3{margin:0 0 6px;font-size:12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:12px;
+      border:1px solid var(--line);background:var(--btn);color:var(--fg);
+      text-decoration:none
+    }
+    .btn.primary{background:var(--accent);color:#082216;border-color:transparent;font-weight:600}
+    a{color:#d0d0ff}
+    footer{margin-top:30px;color:var(--muted);font-size:13px}
+    ul{margin:.25rem 0 .75rem 1.25rem}
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <header>
+      <div class="date" aria-label="organizer">Premissa × 42</div>
+      <h1>Community BBQ — Premissa</h1>
+      <p class="date">Mon, 18 Aug 2025 · 18:00–23:00 · Atlantic/Azores</p>
+    </header>
+
+    <section class="card">
+      <p>Informal barbecue at Premissa. Bring something to cook or a side.</p>
+
+      <div class="meta">
+        <div class="box">
+          <h3>When</h3>
+          <p><strong>18 Aug 2025</strong><br/>18:00–23:00 (Atlantic/Azores)</p>
+        </div>
+        <div class="box">
+          <h3>Where</h3>
+          <p>
+            <strong>Premissa</strong><br/>
+            <a href="https://maps.google.com/?q=Rua+do+Laureano+200/11,+Ponta+Delgada" target="_blank" rel="noopener">
+              Rua do Laureano 200/11, Ponta Delgada
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="box card">
+          <h3 style="margin:0 0 8px;font-size:14px;">What to bring</h3>
+          <ul>
+            <li>Food for the grill / side</li>
+            <li>Drinks</li>
+            <li>Warm layer (outdoor area)</li>
+          </ul>
+        </div>
+        <div class="box card">
+          <h3 style="margin:0 0 8px;font-size:14px;">Notes</h3>
+          <ul>
+            <li>Plates, cutlery and charcoal provided.</li>
+            <li>Quiet hours at 23:00.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="btns">
+        <a class="btn primary" href="mailto:info@premissa.pt?subject=RSVP%3A%20Community%20BBQ">RSVP</a>
+        <a class="btn" href="events.html">Back to events</a>
+      </div>
+    </section>
+
+    <footer>© 2025 Premissa · 42</footer>
+  </main>
+</body>
+</html>
