@@ -16,14 +16,14 @@
       padding: 1rem;
       border-radius: 1rem;
     }
-    .event-card {
+    .nt-card {
       background: #111;
       padding: 1.5rem;
       border-radius: 1rem;
       margin: 1rem 0;
       color: white;
     }
-    .event-card.recurring {
+    .nt-card.recurring {
       border: 1px dashed #666;
       background-color: #1a1a1a;
     }
@@ -96,7 +96,7 @@
   </footer>
 
   <script>
-    fetch("/events/events.json")
+    fetch("/landing/events/events.json")
       .then(res => res.json())
       .then(events => {
         const now = new Date();
@@ -170,4 +170,5 @@
   </script>
 </body>
 </html>
+
 
