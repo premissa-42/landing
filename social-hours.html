@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>42 – Social Hours & Climbing</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+
+  <style>
+    body {
+      background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+        url("../../assets/volunteers1.jpg") center/cover no-repeat fixed;
+      color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 0;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 0.85rem;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 4px;
+    }
+    .back-link:hover { background-color: rgba(255,255,255,0.1); }
+
+    .header {
+      padding: 7rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-family: 'DM Mono', monospace;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #ffd900, #ff75ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header p {
+      max-width: 620px;
+      margin: 0.5rem auto 0;
+      opacity: 0.9;
+    }
+
+    .tagline {
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffcfff;
+      opacity: 0.8;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 3.5rem auto;
+      padding: 0 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: rgba(0,0,0,0.8);
+      padding: 1.4rem 1.5rem;
+      border-radius: 10px;
+      border-left: 3px solid #ffd900;
+      box-shadow: 0 0 12px rgba(0,0,0,0.5);
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 1.02rem;
+    }
+
+    .highlight {
+      background: linear-gradient(to right, #ff75ff22, #00d4ff22);
+      border-left-color: #ff75ff;
+    }
+
+    /* ----- GALLERY ----- */
+    .gallery {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      justify-items: center;
+    }
+
+    .gallery img,
+    .gallery video {
+      width: 100%;
+      max-width: 220px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 16px rgba(0,0,0,0.6);
+      background: #000;
+    }
+
+    .location {
+      margin-top: 2rem;
+      font-size: 0.98rem;
+      opacity: 0.95;
+      text-align: center;
+    }
+    .location a {
+      color: #ffd900;
+      text-decoration: underline;
+    }
+    .location a:hover { opacity: 0.9; }
+
+    .cta {
+      text-align: center;
+      margin: 4rem 0 3rem;
+    }
+    .cta a {
+      padding: 0.8rem 2.4rem;
+      background: linear-gradient(to right, #00d4ff, #ff00ff);
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: opacity 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+    .cta a:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .note {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin-top: 0.8rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="/map.html" class="back-link">Map</a>
+
+<div class="header">
+  <h1>Social Hours & Climbing</h1>
+  <p class="tagline">Climbing, rest and shared time.</p>
+  <p>Bouldering, a small fitness area, coworking tables, sofas, games, a garden full of banana trees, a coffee machine, internet, books, free art supplies and a quiet VR corner.</p>
+</div>
+
+<div class="section">
+  <h2>What we offer</h2>
+
+  <div class="grid">
+
+    <div class="card highlight">
+      <strong>Bouldering</strong>
+      Indoor wall in São Miguel with chalk provided.  
+      Donation for drop-ins: 3–5€.
+    </div>
+
+    <div class="card">
+      <strong>Training area</strong>
+      Basic equipment for strength, warm up and mobility.
+    </div>
+
+    <div class="card">
+      <strong>Coworking & internet</strong>
+      Tables, outlets and a coffee machine.
+    </div>
+
+    <div class="card">
+      <strong>Games & banana garden</strong>
+      Board games, card games and access to the garden surrounded by banana trees.
+    </div>
+
+    <div class="card">
+      <strong>Yoga & pilates</strong>
+      Regular classes with simple sign-up.
+    </div>
+
+    <div class="card">
+      <strong>Books & art supplies</strong>
+      Lending shelf and free materials for drawing and making things.
+    </div>
+
+    <div class="card">
+      <strong>VR corner</strong>
+      Cushioned, low-light room for short VR sessions.
+    </div>
+
+  </div>
+
+  <!-- ALL MEDIA IN ONE GALLERY -->
+  <h2 style="margin-top:3rem;">Gallery</h2>
+
+  <div class="gallery">
+    <img src="../../assets/artnight.jpg" alt="">
+    <img src="../../assets/BBQ-Premissa.png" alt="">
+    <img src="../../assets/Azores-Pride.png" alt="">
+    <img src="../../assets/volunteers1.jpg" alt="">
+    <video controls>
+      <source src="../../assets/LGBTQ-Community.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <p class="location">
+    42 · Premissa Hybrid Space<br>
+    <a href="https://maps.app.goo.gl/LkWemmdUsnsSnc7E9" target="_blank">
+      Rua do Laureano 200/11, Ponta Delgada
+    </a>
+  </p>
+
+</div>
+
+<div class="cta">
+  <a href="/participate.html">Learn how to join</a>
+  <p class="note">Check the map or Instagram for current days and times.</p>
+</div>
+
+</body>
+</html>
