@@ -1,50 +1,18 @@
 [
   {
-    "title": "Community BBQ — Premissa",
-    "date": "2025-08-18T18:00:00",
+    "title": "Volunteer at Premissa",
+    "date": "2025-12-31T18:00:00",
     "location": "Premissa",
-    "description": "Barbecue at Premissa. Bring something to cook or a side.",
-    "link": "events/BBQ_2025-08-18.html",
-    "type": "event"
+    "description": "Support a creative community and receive a certificate for your contribution.",
+    "link": "events/volunteering.html",
+    "type": "opportunity"
   },
   {
-    "title": "Brunch, babe?",
-    "date": "2025-06-28T12:00:00",
+    "title": "Community Winter Night",
+    "date": "2025-11-13T19:30:00",
     "location": "Premissa",
-    "description": "Make your banner or just have hot buns & espumante.",
-    "link": "events/Pride-2025.html",
-    "type": "event"
-  },
-  {
-    "title": "Mapping Flores",
-    "date": "2024-09-14T18:00:00",
-    "location": "Flores Island",
-    "description": "An immersive trail blending community storytelling, art and geocaching.",
-    "link": "events/Mapping-Flores.html",
-    "type": "event"
-  },
-  {
-    "title": "Gaza XR – VR Experiences",
-    "date": "2025-09-13T17:00:00",
-    "location": "Premissa",
-    "description": "Immersive VR experiences from The Phoenix of Gaza XR at 42 Premissa.",
-    "link": "events/Gaza-XR.html",
-    "type": "event"
-  },
-  {
-    "title": "Identity Movie Night",
-    "date": "2025-08-17T22:00:00",
-    "location": "Premissa",
-    "description": "Late-night screening exploring identity, belonging and becoming.",
-    "link": "events/Identity-Movie-Night-2025-08-17.html",
-    "type": "event"
-  },
-  {
-    "title": "Art Night – Social Arts & Crafts",
-    "date": "2025-10-15T18:00:00",
-    "location": "Premissa",
-    "description": "Bring your sketchbook or project and make things together at 42 Premissa.",
-    "link": "events/Art-Night-2025-10-15.html",
+    "description": "Drinks, music, climbing and snacks to kick off the winter season at Premissa.",
+    "link": "events/BBQ-2025-11-13.html",
     "type": "event"
   },
   {
@@ -56,19 +24,59 @@
     "type": "event"
   },
   {
-    "title": "Community Winter Night",
-    "date": "2025-11-13T19:30:00",
+    "title": "Art Night – Social Arts & Crafts",
+    "date": "2025-10-15T18:00:00",
     "location": "Premissa",
-    "description": "Drinks, music, climbing and snacks to kick off the winter season at Premissa.",
-    "link": "events/BBQ-2025-11-13.html",
+    "description": "Bring your sketchbook or project and make things together at 42 Premissa.",
+    "link": "events/Art-Night-2025-10-15.html",
     "type": "event"
   },
   {
-    "title": "Volunteer at Premissa",
-    "date": "2025-12-31T18:00:00",
+    "title": "Gaza XR – VR Experiences",
+    "date": "2025-09-13T17:00:00",
     "location": "Premissa",
-    "description": "Support a creative community and receive a certificate for your contribution.",
-    "link": "events/volunteering.html",
-    "type": "opportunity"
+    "description": "Immersive VR experiences from The Phoenix of Gaza XR at 42 Premissa.",
+    "link": "events/Gaza-XR.html",
+    "type": "event"
+  },
+  {
+    "title": "Community BBQ — Premissa",
+    "date": "2025-08-18T18:00:00",
+    "location": "Premissa",
+    "description": "Barbecue at Premissa. Bring something to cook or a side.",
+    "link": "events/BBQ_2025-08-18.html",
+    "type": "event"
+  },
+  {
+    "title": "Identity Movie Night",
+    "date": "2025-08-17T22:00:00",
+    "location": "Premissa",
+    "description": "Late-night screening exploring identity, belonging and becoming.",
+    "link": "events/Identity-Movie-Night-2025-08-17.html",
+    "type": "event"
+  },
+  {
+    "title": "Brunch, babe?",
+    "date": "2025-06-28T12:00:00",
+    "location": "Premissa",
+    "description": "Make your banner or just have hot buns & espumante.",
+    "link": "events/Pride-2025.html",
+    "type": "event"
+  },
+  {
+    "title": "Viva la Vulva – Second Edition",
+    "date": "2024-12-13T18:00:00",
+    "location": "Premissa",
+    "description": "Pelvic floor training, vulva workshops, neon art & silent disco.",
+    "link": "events/VivaLaVulva-2024-12-13.html",
+    "type": "event"
+  },
+  {
+    "title": "Mapping Flores",
+    "date": "2024-09-14T18:00:00",
+    "location": "Flores Island",
+    "description": "An immersive trail blending community storytelling, art and geocaching.",
+    "link": "events/Mapping-Flores.html",
+    "type": "event"
   }
 ]
