@@ -85,7 +85,8 @@
   "date": "2025-06-16",
   "location": "Premissa",
   "description": "A sci-fi movie night.",
-  "link": "/events/scifi-movie-night.html"
+  "link": "events/scifi-movie-night.html"
+  "type": "event"
 },
   {
     "title": "Viva la Vulva – Second Edition",
