@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gaza XR | 42 x Premissa</title>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&display=swap" rel="stylesheet" />
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -59,6 +60,29 @@
       text-decoration: underline;
     }
 
+    /* --- TWO IMAGES SIDE BY SIDE --- */
+    .image-row {
+      max-width: 900px;
+      margin: 2rem auto;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .image-row img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+      object-fit: cover;
+    }
+
+    /* stack on mobile */
+    @media (max-width: 750px) {
+      .image-row {
+        flex-direction: column;
+      }
+    }
+
     .map {
       margin: 2rem auto 0;
       max-width: 800px;
@@ -88,6 +112,8 @@
 </head>
 
 <body>
+
+  <!-- MAIN POSTER -->
   <div class="hero">
     <img src="../assets/GazaOpening.png" alt="Gaza XR VR Experience" />
   </div>
@@ -117,8 +143,10 @@
     </p>
   </div>
 
-  <div class="hero">
-    <img src="../assets/GazaOpening2.png" alt="Gaza XR VR preview" />
+  <!-- TWO IMAGES SIDE BY SIDE -->
+  <div class="image-row">
+    <img src="../assets/GazaOpening.png" alt="Gaza XR image 1" />
+    <img src="../assets/GazaOpening2.png" alt="Gaza XR image 2" />
   </div>
 
   <div class="map">
@@ -131,9 +159,11 @@
   <footer>
     <p style="margin-bottom: 0.5rem;">A project by</p>
     <img src="../assets/Premissa_Logo_transparent.png" alt="Premissa Logo" style="height: 60px;" />
+
     <p style="margin: 2rem 0 0.5rem;">Funded by</p>
     <img src="../assets/Jovensmais.jpg" alt="Jovens+" style="height: 50px; max-width: 200px;" />
     <img src="../assets/Drac-rjaac.png" alt="DRJ / Cultura Açores" style="height: 50px; max-width: 200px;" />
   </footer>
+
 </body>
 </html>
