@@ -107,6 +107,25 @@
     .back-link:hover {
       background-color: rgba(255,255,255,0.1);
     }
+
+    /* --- Beautiful Video Frame --- */
+    .video-frame {
+      max-width: 900px;
+      margin: 3rem auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4),
+                  0 0 10px rgba(255,255,255,0.1);
+      backdrop-filter: blur(6px);
+      background: rgba(0,0,0,0.45);
+      padding: 1rem;
+    }
+
+    .video-frame video {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -138,6 +157,17 @@
   <p>42 is a weekly social drop-in for LGBTQIA+ and friends. It's a welcoming space to hang out — no agenda, but options.</p>
   <p>It's also where we host queer-focused VR exhibitions — immersive experiences centered on identity, expression, and queer history. Special events and themed sessions will be announced here.</p>
 </div>
+
+<!-- 🌈 Video Section -->
+<div class="section">
+  <h2>Short film: LGBTQ+ Community</h2>
+
+  <div class="video-frame">
+    <video controls>
+      <source src="../../assets/LGBTQ-Community.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </div>
 
 <div class="cta">
