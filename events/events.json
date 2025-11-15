@@ -39,7 +39,14 @@
     "link": "events/Gaza-XR.html",
     "type": "event"
   },
-  
+   {
+  "title": "Bi Visibility Exhibition",
+  "date": "2025-09-07T14:00:00",
+  "location": "Premissa",
+  "description": "Photography & artistic representations celebrating bisexual identities.",
+  "link": "events/Bi-Visibility-Exhibition-2025-09-07.html",
+  "type": "event"
+},
   {
     "title": "Community BBQ — Premissa",
     "date": "2025-08-18T18:00:00",
@@ -48,15 +55,7 @@
     "link": "events/BBQ_2025-08-18.html",
     "type": "event"
   },
-  {
-  "title": "Bi Visibility Exhibition",
-  "date": "2025-09-07",
-  "time": "15:00–22:00",
-  "location": "Premissa",
-  "description": "Photography & artistic representations celebrating bisexual identities.",
-  "link": "/events/Bi-Visibility-Exhibition-2025-09-07.html",
-  "type": "event"
-},
+ 
   {
     "title": "Identity Movie Night",
     "date": "2025-08-17T22:00:00",
