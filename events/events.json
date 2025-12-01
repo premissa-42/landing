@@ -8,10 +8,18 @@
     "type": "opportunity"
   },
   {
+    "title": "Christmas in Premissa",
+    "date": "2025-12-15T17:00:00",
+    "location": "Premissa",
+    "description": "Dance around the driftwood tree.",
+    "link": "events/Christmas2025.html",
+    "type": "event"
+  },
+  {
     "title": "Community Winter Night",
     "date": "2025-11-13T19:30:00",
     "location": "Premissa",
-    "description": "Drinks, music, climbing and snacks to kick off the winter season at Premissa.",
+    "description": "Kick off the winter season at Premissa.",
     "link": "events/BBQ-2025-11-13.html",
     "type": "event"
   },
