@@ -16,7 +16,7 @@
       padding: 3rem 1.5rem 2.5rem;
 
       background:
-        radial-gradient(circle, rgba(0,0,0,0.55), rgba(0,0,0,0.92)),
+        radial-gradient(circle, rgba(0,0,0,0.6), rgba(0,0,0,0.94)),
         url('../assets/christmas-clay-ornaments.png') no-repeat center center fixed;
       background-size: cover;
     }
@@ -24,7 +24,7 @@
     h1 {
       font-size: 2.8rem;
       margin-bottom: 0.4rem;
-      background: linear-gradient(90deg, #ffedd5, #f97316);
+      background: linear-gradient(90deg, #ff99cc, #cc99ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 10px rgba(0,0,0,0.7);
@@ -34,7 +34,7 @@
       font-size: 0.95rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #fde68a;
+      color: #ffdef5;
       margin-bottom: 1.7rem;
     }
 
@@ -43,8 +43,8 @@
       margin: 0 auto 2rem;
       padding: 1.8rem 1.6rem;
       border-radius: 1.1rem;
-      background: rgba(0,0,0,0.72);
-      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.7);
+      border: 1px solid rgba(255,255,255,0.25);
       box-shadow: 0 0 20px rgba(0,0,0,0.7);
       font-size: 0.98rem;
       line-height: 1.6;
@@ -55,12 +55,10 @@
       color: #f9fafb;
     }
 
-    .details-card strong {
-      color: #fff;
-    }
+    .details-card strong { color: #fff; }
 
     a.location {
-      color: #fee2e2;
+      color: #ffccff;
       text-decoration: underline;
     }
 
@@ -93,8 +91,8 @@
       border-radius: 999px;
       text-decoration: none;
       font-size: 0.9rem;
-      background: linear-gradient(90deg, #4b5563, #9ca3af);
-      color: #f9fafb;
+      background: linear-gradient(90deg, #ff66cc, #9966ff);
+      color: #fff;
       transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
@@ -119,11 +117,16 @@
     }
 
     footer {
-      margin-top: 2.5rem;
-      padding: 1.6rem 0 0.8rem;
-      font-size: 0.8rem;
-      color: #e5e7eb;
-      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+      margin-top: 3rem;
+      padding: 2rem 0 1rem;
+      font-size: 0.85rem;
+      color: #ddd;
+      text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+
+    footer img {
+      margin: 0.5rem 1rem;
+      filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
     }
 
     @media (max-width: 600px) {
@@ -133,9 +136,10 @@
     }
   </style>
 </head>
+
 <body>
 
-  <h1>Dance around the Driftwood Tree</h1>
+  <h1>Dance Around the Driftwood Tree</h1>
   <p class="subtitle">christmas at premissa</p>
 
   <section class="details-card">
@@ -149,22 +153,21 @@
       </a>
     </p>
     <p>
-      Our end-of-year evening with mulled wine, snacks, music and crafts.
+      Mulled wine, snacks, music and big hugs.
     </p>
 
     <div class="list">
       <p>We’ll have:</p>
       <ul>
-        <li>• Beads, clay and colours</li>
-        <li>• An awsome driftwood Christmas tree to decorate</li>
-        <li>• Hugs for emotional christmas goobyes</li>
+        <li>• Beads, clay and colours for DIY decoration</li>
+        <li>• A driftwood Christmas tree to dance around</li>
+        <li>• Easy T-shirt print materials</li>
       </ul>
-
     </div>
 
-   <div class="cta">
+    <div class="cta">
       <a href="/participate.html" target="_blank">
-        You want to participate with something else?;
+        Suggestions?
       </a>
     </div>
   </section>
@@ -172,14 +175,17 @@
   <section class="map">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.902215263618!2d-25.6574175875459!3d37.74543821373096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb5cd57a50b9ab0b%3A0xdcecf5437a70fc1c!2sPremissa!5e0!3m2!1sen!2sde!4v1747756515279"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      allowfullscreen>
+      loading="lazy" allowfullscreen>
     </iframe>
   </section>
 
   <footer>
-    Part of the 42 by PAA – Premissa Açores Associação
+    <p style="margin-bottom: 0.5rem;">A project by</p>
+    <img src="../assets/Premissa_Logo_transparent.png" alt="Premissa Logo" style="height: 60px;" />
+
+    <p style="margin: 2rem 0 0.5rem;">Funded by</p>
+    <img src="../assets/Jovensmais.jpg" alt="Jovens+" style="height: 50px; max-width: 200px;" />
+    <img src="../assets/Drac-rjaac.png" alt="DRJ / Cultura Açores" style="height: 50px; max-width: 200px;" />
   </footer>
 
 </body>
