@@ -73,11 +73,11 @@
     "type": "event"
   },
   {
-  "title": "Photovoice Kickoff Meeting",
-  "date": "2025-06-07T15:00:00",
+  "title": "VR Museum Trial – Meditation & Breathing",
+  "date": "2025-07-13T10:00:00",
   "location": "Premissa",
-  "description": "Short intro session for people interested in joining the island-wide Photovoice research project.",
-  "link": "events/photovoice-kickoff.html",
+  "description": "First youth trial of the VR Museum meditation and breathing module.",
+  "link": "events/VR-Museum-Trial-2025-07-13.html",
   "type": "event"
 },
   {
@@ -94,6 +94,14 @@
   "location": "Premissa",
   "description": "A sci-fi movie night.",
   "link": "events/scifi-movie-night.html",
+  "type": "event"
+},
+  {
+  "title": "Photovoice Kickoff Meeting",
+  "date": "2025-06-07T15:00:00",
+  "location": "Premissa",
+  "description": "Short intro session for people interested in joining the island-wide Photovoice research project.",
+  "link": "events/photovoice-kickoff.html",
   "type": "event"
 },
   {
