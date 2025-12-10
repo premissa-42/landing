@@ -40,6 +40,14 @@
     "type": "event"
   },
   {
+  "title": "VR – Anne Frank House",
+  "date": "2025-10-13T10:00:00",
+  "location": "Premissa",
+  "description": "Anne Frank House VR experience.",
+  "link": "events/VR-AnneFrankHouse-2025-10-13.html",
+  "type": "event"
+},
+  {
     "title": "Gaza XR – VR Experiences",
     "date": "2025-09-13T17:00:00",
     "location": "Premissa",
