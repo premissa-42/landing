@@ -16,18 +16,20 @@
       padding: 3rem 1.2rem 2rem;
     }
 
+    /* HERO BACKGROUND IMAGE — METHOD 2 */
     .hero {
+      width: 100%;
       max-width: 900px;
+      height: 60vh; /* Large hero banner */
       margin: 0 auto 2rem;
       border-radius: 1rem;
       overflow: hidden;
       box-shadow: 0 0 25px rgba(0,0,0,0.6);
-    }
 
-    .hero img {
-      width: 100%;
-      height: auto;
-      display: block;
+      background-image: url("../assets/artnight.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     h1 {
@@ -102,10 +104,9 @@
 </head>
 
 <body>
-  <!-- Poster/Hero (falls vorhanden) -->
-<div class="hero">
-  <img src="../assets/artnight.jpg" alt="Art Night poster" />
-</div>
+
+  <!-- HERO BACKGROUND (no <img>) -->
+  <div class="hero"></div>
 
   <h1>Art Night</h1>
   <p class="subtitle">social arts & crafts · open table</p>
@@ -148,7 +149,7 @@
     <img src="../assets/Jovensmais.jpg" alt="Jovens+" style="height: 50px; max-width: 200px;" />
     <img src="../assets/Drac-rjaac.png" alt="DRJ / Cultura Açores" style="height: 50px; max-width: 200px;" />
     <img src="../assets/drj.png" alt="DRJ / Cultura Açores" style="height: 50px; max-width: 200px;" />
-
   </footer>
+
 </body>
 </html>
